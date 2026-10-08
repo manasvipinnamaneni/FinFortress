@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
-
 import api from "../services/api";
-
-
-// =====================================================
-// INTERFACE
-// =====================================================
+import "./Transactions.css";
 
 interface Transaction {
     id: number;
@@ -28,39 +23,19 @@ interface TransactionResponse {
     message?: string;
 }
 
-
-// =====================================================
-// COMPONENT
-// =====================================================
-
 function Transactions() {
+    const [transactions, setTransactions] = useState<Transaction[]>([]);
+    const [accountNumber, setAccountNumber] = useState("");
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
+    const [refreshing, setRefreshing] = useState(false);
 
-    const [transactions, setTransactions] =
-        useState<Transaction[]>([]);
-
-    const [accountNumber, setAccountNumber] =
-        useState("");
-
-    const [loading, setLoading] =
-        useState(true);
-
-    const [error, setError] =
-        useState("");
-
-    const [refreshing, setRefreshing] =
-        useState(false);
-
-
-    // =================================================
+    // =====================================================
     // LOAD TRANSACTIONS
-    // =================================================
+    // =====================================================
 
-    const loadTransactions = async (
-        isRefresh = false
-    ) => {
-
+    const loadTransactions = async (isRefresh = false) => {
         try {
-
             if (isRefresh) {
                 setRefreshing(true);
             } else {
@@ -69,40 +44,31 @@ function Transactions() {
 
             setError("");
 
-
             const response =
                 await api.get<TransactionResponse>(
                     "/transactions"
                 );
 
-
-            console.log(
-                "Transactions API:",
-                response.data
-            );
-
-
             if (response.data.success) {
-
                 setAccountNumber(
                     response.data.account_number || ""
                 );
 
+                /*
+                 * IMPORTANT:
+                 * Do not sort or reverse here.
+                 * The backend order is preserved exactly.
+                 */
                 setTransactions(
                     response.data.transactions || []
                 );
-
             } else {
-
                 setError(
                     response.data.message ||
                     "Unable to load transactions."
                 );
-
             }
-
         } catch (err: any) {
-
             console.error(
                 "Transactions error:",
                 err
@@ -112,36 +78,25 @@ function Transactions() {
                 err.response?.data?.message ||
                 "Unable to load your transactions."
             );
-
         } finally {
-
             setLoading(false);
             setRefreshing(false);
-
         }
-
     };
 
-
-    // =================================================
+    // =====================================================
     // INITIAL LOAD
-    // =================================================
+    // =====================================================
 
     useEffect(() => {
-
         loadTransactions();
-
     }, []);
 
+    // =====================================================
+    // FORMAT AMOUNT
+    // =====================================================
 
-    // =================================================
-    // FORMAT MONEY
-    // =================================================
-
-    const formatAmount = (
-        amount: number
-    ) => {
-
+    const formatAmount = (amount: number) => {
         return Number(amount || 0).toLocaleString(
             "en-IN",
             {
@@ -149,95 +104,63 @@ function Transactions() {
                 maximumFractionDigits: 2
             }
         );
-
     };
 
+    // =====================================================
+    // FORMAT DATE AND TIME
+    // =====================================================
 
-    // =================================================
-    // FORMAT DATE
-    // =================================================
-
-    const formatDate = (
-        dateString: string
-    ) => {
-
+    const formatDateTime = (dateString: string) => {
         if (!dateString) {
-
             return {
                 date: "-",
                 time: "-"
             };
-
         }
 
+        const date = new Date(dateString);
 
-        const date =
-            new Date(dateString);
-
-
-        if (
-            Number.isNaN(
-                date.getTime()
-            )
-        ) {
-
+        if (Number.isNaN(date.getTime())) {
             return {
                 date: "-",
                 time: "-"
             };
-
         }
-
 
         return {
-
-            date:
-                date.toLocaleDateString(
-                    "en-IN",
-                    {
-                        day: "2-digit",
-                        month: "short",
-                        year: "numeric"
-                    }
-                ),
-
-            time:
-                date.toLocaleTimeString(
-                    "en-IN",
-                    {
-                        hour: "2-digit",
-                        minute: "2-digit"
-                    }
-                )
-
+            date: date.toLocaleDateString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            ),
+            time: date.toLocaleTimeString(
+                "en-IN",
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            )
         };
-
     };
 
+    // =====================================================
+    // TITLE
+    // =====================================================
 
-    // =================================================
-    // TRANSACTION TITLE
-    // =================================================
-
-    const getTitle = (
-        transaction: Transaction
-    ) => {
-
+    const getTitle = (transaction: Transaction) => {
         if (
             transaction.description &&
             transaction.description.trim()
         ) {
-
             return transaction.description;
-
         }
 
-
         switch (
-            transaction.transaction_type
-                ?.toLowerCase()
+            transaction.transaction_type?.toLowerCase()
         ) {
-
             case "deposit":
                 return "Deposit";
 
@@ -249,24 +172,15 @@ function Transactions() {
 
             default:
                 return "Transaction";
-
         }
-
     };
 
+    // =====================================================
+    // TYPE
+    // =====================================================
 
-    // =================================================
-    // TRANSACTION TYPE
-    // =================================================
-
-    const getType = (
-        type: string
-    ) => {
-
-        switch (
-            type?.toLowerCase()
-        ) {
-
+    const getType = (type: string) => {
+        switch (type?.toLowerCase()) {
             case "deposit":
                 return "Deposit";
 
@@ -278,23 +192,15 @@ function Transactions() {
 
             default:
                 return "Transaction";
-
         }
-
     };
 
-
-    // =================================================
+    // =====================================================
     // STATUS
-    // =================================================
+    // =====================================================
 
-    const getStatus = (
-        status: string
-    ) => {
-
-        const value =
-            status?.toLowerCase();
-
+    const getStatus = (status: string) => {
+        const value = status?.toLowerCase();
 
         if (value === "blocked") {
             return "BLOCKED";
@@ -305,21 +211,14 @@ function Transactions() {
         }
 
         return "COMPLETED";
-
     };
 
-
-    // =================================================
+    // =====================================================
     // STATUS CLASS
-    // =================================================
+    // =====================================================
 
-    const getStatusClass = (
-        status: string
-    ) => {
-
-        const value =
-            status?.toLowerCase();
-
+    const getStatusClass = (status: string) => {
+        const value = status?.toLowerCase();
 
         if (value === "blocked") {
             return "blocked";
@@ -330,34 +229,23 @@ function Transactions() {
         }
 
         return "completed";
-
     };
 
-
-    // =================================================
+    // =====================================================
     // ICON
-    // =================================================
+    // =====================================================
 
-    const getIcon = (
-        transaction: Transaction
-    ) => {
-
+    const getIcon = (transaction: Transaction) => {
         if (
-            transaction.status
-                ?.toLowerCase() ===
+            transaction.status?.toLowerCase() ===
             "blocked"
         ) {
-
             return "!";
-
         }
 
-
         switch (
-            transaction.transaction_type
-                ?.toLowerCase()
+            transaction.transaction_type?.toLowerCase()
         ) {
-
             case "deposit":
                 return "↓";
 
@@ -369,36 +257,24 @@ function Transactions() {
 
             default:
                 return "₹";
-
         }
-
     };
 
-
-    // =================================================
+    // =====================================================
     // ICON CLASS
-    // =================================================
+    // =====================================================
 
-    const getIconClass = (
-        transaction: Transaction
-    ) => {
-
+    const getIconClass = (transaction: Transaction) => {
         if (
-            transaction.status
-                ?.toLowerCase() ===
+            transaction.status?.toLowerCase() ===
             "blocked"
         ) {
-
             return "blocked";
-
         }
 
-
         switch (
-            transaction.transaction_type
-                ?.toLowerCase()
+            transaction.transaction_type?.toLowerCase()
         ) {
-
             case "deposit":
                 return "deposit";
 
@@ -410,24 +286,17 @@ function Transactions() {
 
             default:
                 return "deposit";
-
         }
-
     };
 
-
-    // =================================================
+    // =====================================================
     // LOADING
-    // =================================================
+    // =====================================================
 
     if (loading) {
-
         return (
-
             <div className="transactions-page">
-
                 <div className="transactions-loading">
-
                     <div className="transactions-loading-spinner">
                         ↻
                     </div>
@@ -440,28 +309,19 @@ function Transactions() {
                         Please wait while we load
                         your transaction history.
                     </p>
-
                 </div>
-
             </div>
-
         );
-
     }
 
-
-    // =================================================
+    // =====================================================
     // ERROR
-    // =================================================
+    // =====================================================
 
     if (error) {
-
         return (
-
             <div className="transactions-page">
-
                 <div className="transactions-error">
-
                     <div className="transactions-error-icon">
                         !
                     </div>
@@ -482,32 +342,25 @@ function Transactions() {
                     >
                         Try Again
                     </button>
-
                 </div>
-
             </div>
-
         );
-
     }
 
-
-    // =================================================
+    // =====================================================
     // MAIN
-    // =================================================
+    // =====================================================
 
     return (
-
         <div className="transactions-page">
 
-            {/* =========================================
+            {/* =================================================
                 PAGE HEADER
-            ========================================= */}
+            ================================================= */}
 
             <div className="transactions-page-header">
 
                 <div>
-
                     <div className="transactions-eyebrow">
                         OVERVIEW
                     </div>
@@ -520,9 +373,7 @@ function Transactions() {
                         View and manage your recent
                         banking transactions
                     </p>
-
                 </div>
-
 
                 <button
                     type="button"
@@ -532,19 +383,17 @@ function Transactions() {
                     }
                     disabled={refreshing}
                 >
-
                     {refreshing
                         ? "Refreshing..."
                         : "↻ Refresh"}
-
                 </button>
 
             </div>
 
 
-            {/* =========================================
-                SUMMARY
-            ========================================= */}
+            {/* =================================================
+                SUMMARY CARDS
+            ================================================= */}
 
             <div className="transactions-summary">
 
@@ -554,7 +403,7 @@ function Transactions() {
                         #
                     </div>
 
-                    <div>
+                    <div className="transactions-summary-content">
 
                         <span>
                             ACCOUNT NUMBER
@@ -575,7 +424,7 @@ function Transactions() {
                         ⇄
                     </div>
 
-                    <div>
+                    <div className="transactions-summary-content">
 
                         <span>
                             TOTAL TRANSACTIONS
@@ -592,16 +441,15 @@ function Transactions() {
             </div>
 
 
-            {/* =========================================
+            {/* =================================================
                 HISTORY CARD
-            ========================================= */}
+            ================================================= */}
 
             <div className="transactions-history-card">
 
                 <div className="transactions-history-header">
 
                     <div>
-
                         <h2>
                             Transaction History
                         </h2>
@@ -610,7 +458,6 @@ function Transactions() {
                             Your latest deposits,
                             withdrawals and transfers
                         </p>
-
                     </div>
 
                     <div className="transactions-count">
@@ -620,9 +467,9 @@ function Transactions() {
                 </div>
 
 
-                {/* =====================================
-                    EMPTY STATE
-                ===================================== */}
+                {/* =================================================
+                    EMPTY
+                ================================================= */}
 
                 {transactions.length === 0 ? (
 
@@ -645,16 +492,15 @@ function Transactions() {
 
                 ) : (
 
-                    /* =================================
+                    /* =================================================
                        TABLE
-                    ================================= */
+                    ================================================= */
 
                     <div className="transactions-table-container">
 
                         <table className="transactions-table">
 
                             <thead>
-
                                 <tr>
 
                                     <th>
@@ -678,11 +524,17 @@ function Transactions() {
                                     </th>
 
                                 </tr>
-
                             </thead>
 
 
                             <tbody>
+
+                                {/*
+                                 * DO NOT SORT.
+                                 * DO NOT REVERSE.
+                                 *
+                                 * Backend order is preserved.
+                                 */}
 
                                 {transactions.map(
                                     (transaction) => {
@@ -692,15 +544,12 @@ function Transactions() {
                                                 ?.toLowerCase() ===
                                             "blocked";
 
-
                                         const date =
-                                            formatDate(
+                                            formatDateTime(
                                                 transaction.created_at
                                             );
 
-
                                         return (
-
                                             <tr
                                                 key={
                                                     transaction.id
@@ -712,7 +561,9 @@ function Transactions() {
                                                 }
                                             >
 
-                                                {/* TRANSACTION */}
+                                                {/* =========================
+                                                    TRANSACTION
+                                                ========================== */}
 
                                                 <td>
 
@@ -723,11 +574,9 @@ function Transactions() {
                                                                 transaction
                                                             )}`}
                                                         >
-
                                                             {getIcon(
                                                                 transaction
                                                             )}
-
                                                         </div>
 
 
@@ -739,12 +588,18 @@ function Transactions() {
                                                                 )}
                                                             </strong>
 
-                                                            <span>
+                                                            <span className="transaction-number">
                                                                 Transaction #
                                                                 {
                                                                     transaction.id
                                                                 }
                                                             </span>
+
+                                                            {blocked && (
+                                                                <span className="transaction-blocked-text">
+                                                                    Blocked by AI fraud detection
+                                                                </span>
+                                                            )}
 
                                                         </div>
 
@@ -753,7 +608,9 @@ function Transactions() {
                                                 </td>
 
 
-                                                {/* TYPE */}
+                                                {/* =========================
+                                                    TYPE
+                                                ========================== */}
 
                                                 <td>
 
@@ -766,7 +623,9 @@ function Transactions() {
                                                 </td>
 
 
-                                                {/* AMOUNT */}
+                                                {/* =========================
+                                                    AMOUNT
+                                                ========================== */}
 
                                                 <td>
 
@@ -778,15 +637,15 @@ function Transactions() {
                                                                     : transaction.transaction_type
                                                                         ?.toLowerCase() ===
                                                                         "deposit"
-                                                                    ? "amount-positive"
-                                                                    : "amount-negative"
+                                                                        ? "amount-positive"
+                                                                        : "amount-negative"
                                                             }`
                                                         }
                                                     >
 
                                                         {transaction.transaction_type
                                                             ?.toLowerCase() ===
-                                                        "deposit"
+                                                            "deposit"
                                                             ? "+"
                                                             : "-"}
 
@@ -800,7 +659,9 @@ function Transactions() {
                                                 </td>
 
 
-                                                {/* DATE */}
+                                                {/* =========================
+                                                    DATE & TIME
+                                                ========================== */}
 
                                                 <td>
 
@@ -819,7 +680,9 @@ function Transactions() {
                                                 </td>
 
 
-                                                {/* STATUS */}
+                                                {/* =========================
+                                                    STATUS
+                                                ========================== */}
 
                                                 <td>
 
@@ -828,19 +691,15 @@ function Transactions() {
                                                             transaction.status
                                                         )}`}
                                                     >
-
                                                         {getStatus(
                                                             transaction.status
                                                         )}
-
                                                     </span>
 
                                                 </td>
 
                                             </tr>
-
                                         );
-
                                     }
                                 )}
 
@@ -855,9 +714,9 @@ function Transactions() {
             </div>
 
 
-            {/* =========================================
+            {/* =================================================
                 AI NOTICE
-            ========================================= */}
+            ================================================= */}
 
             {transactions.some(
                 transaction =>
@@ -894,9 +753,7 @@ function Transactions() {
             )}
 
         </div>
-
     );
-
 }
 
 export default Transactions;
