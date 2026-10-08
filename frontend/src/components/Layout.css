@@ -1,0 +1,874 @@
+/* =====================================================
+   SMARTBANK LAYOUT
+   Collapsible Sidebar + Dark Mode
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+.app-layout {
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 78px;
+
+    min-height: 100vh;
+
+    background: #f3f8f7;
+
+    color: #082f3a;
+
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.smartbank-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: var(--sidebar-width);
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border-right: 1px solid #dfe9e7;
+
+    z-index: 1000;
+
+    transition:
+        width 0.28s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   COLLAPSED SIDEBAR
+===================================================== */
+
+.sidebar-collapsed .smartbank-sidebar {
+    width: var(--sidebar-collapsed-width);
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.sidebar-brand {
+    height: 86px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+
+    gap: 12px;
+
+    border-bottom: 1px solid #edf2f1;
+
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        #18c7c9,
+        #0fa8ad
+    );
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(24, 199, 201, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.brand-logo:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 26px rgba(24, 199, 201, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.brand-logo svg {
+    width: 34px;
+    height: 34px;
+
+    display: block;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    white-space: nowrap;
+}
+
+.brand-text strong {
+    color: #082f3a;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+.brand-text span {
+    margin-top: 3px;
+
+    color: #789393;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   COLLAPSED BRAND
+===================================================== */
+
+.sidebar-collapsed .sidebar-brand {
+    justify-content: center;
+
+    padding: 0;
+}
+
+.sidebar-collapsed .brand-text {
+    width: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.sidebar-navigation {
+    flex: 1;
+
+    padding: 25px 12px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+}
+
+.sidebar-section-title {
+    display: block;
+
+    padding: 0 12px;
+
+    margin-bottom: 10px;
+
+    color: #8aa09f;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    white-space: nowrap;
+}
+
+.sidebar-section-title.secondary {
+    margin-top: 28px;
+}
+
+
+/* =====================================================
+   SIDEBAR LINKS
+===================================================== */
+
+.sidebar-link {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 0 13px;
+
+    margin-bottom: 5px;
+
+    border-radius: 11px;
+
+    color: #6d8585;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background: #f0f8f7;
+
+    color: #075f5a;
+}
+
+.sidebar-link.active {
+    background: #e5f5f3;
+
+    color: #075f5a;
+
+    font-weight: 700;
+}
+
+.sidebar-link.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 10px;
+    bottom: 10px;
+
+    width: 3px;
+
+    border-radius: 5px;
+
+    background: #07877f;
+}
+
+
+/* =====================================================
+   SIDEBAR ICON
+===================================================== */
+
+.sidebar-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+.sidebar-link.active .sidebar-icon {
+    background: #d4efec;
+}
+
+
+/* =====================================================
+   COLLAPSED LINKS
+===================================================== */
+
+.sidebar-collapsed .sidebar-link {
+    justify-content: center;
+
+    padding: 0;
+}
+
+.sidebar-collapsed .sidebar-link-text {
+    width: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+}
+
+.sidebar-collapsed .sidebar-section-title {
+    width: 0;
+
+    height: 0;
+
+    padding: 0;
+
+    margin: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+}
+
+.sidebar-collapsed .sidebar-link.active::before {
+    left: 2px;
+}
+
+
+/* =====================================================
+   SIDEBAR BOTTOM
+===================================================== */
+
+.sidebar-bottom {
+    padding: 15px 12px 18px;
+
+    border-top: 1px solid #edf2f1;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   SETTING / COLLAPSE / LOGOUT BUTTONS
+===================================================== */
+
+.sidebar-setting-button,
+.sidebar-collapse-button,
+.sidebar-logout-button {
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 13px;
+
+    margin-bottom: 6px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #718989;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.sidebar-setting-button:hover,
+.sidebar-collapse-button:hover {
+    background: #f0f8f7;
+
+    color: #075f5a;
+}
+
+.sidebar-logout-button:hover {
+    background: #fff1f1;
+
+    color: #c43e3e;
+}
+
+
+/* =====================================================
+   COLLAPSED BOTTOM BUTTONS
+===================================================== */
+
+.sidebar-collapsed .sidebar-setting-button,
+.sidebar-collapsed .sidebar-collapse-button,
+.sidebar-collapsed .sidebar-logout-button {
+    justify-content: center;
+
+    padding: 0;
+}
+
+.sidebar-collapsed .theme-toggle-indicator {
+    display: none;
+}
+
+
+/* =====================================================
+   THEME INDICATOR
+===================================================== */
+
+.theme-toggle-indicator {
+    margin-left: auto;
+
+    padding: 3px 6px;
+
+    border-radius: 5px;
+
+    background: #edf6f4;
+
+    color: #07877f;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   MAIN AREA
+===================================================== */
+
+.app-main {
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-width);
+
+    transition: margin-left 0.28s ease;
+
+    background: #f3f8f7;
+}
+
+.sidebar-collapsed .app-main {
+    margin-left: var(--sidebar-collapsed-width);
+}
+
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.smartbank-topbar {
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 32px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #dfe9e7;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 900;
+}
+
+.topbar-page-name {
+    color: #789393;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+}
+
+.topbar-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =====================================================
+   TOPBAR THEME BUTTON
+===================================================== */
+
+.topbar-theme-button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dce8e7;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #075f5a;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.topbar-theme-button:hover {
+    background: #eef8f6;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
+.app-page-content {
+    width: 100%;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+.mobile-menu-button {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #dce8e7;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #075f5a;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.sidebar-close-mobile {
+    display: none;
+}
+
+.mobile-sidebar-overlay {
+    display: none;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+    background: #101b1b;
+}
+
+body.dark-mode .app-layout {
+    background: #101b1b;
+
+    color: #e7f4f2;
+}
+
+body.dark-mode .smartbank-sidebar {
+    background: #142323;
+
+    border-color: #263b3a;
+}
+
+body.dark-mode .sidebar-brand {
+    border-color: #263b3a;
+}
+
+body.dark-mode .brand-text strong {
+    color: #eaf7f5;
+}
+
+body.dark-mode .brand-text span {
+    color: #789493;
+}
+
+body.dark-mode .sidebar-section-title {
+    color: #607977;
+}
+
+body.dark-mode .sidebar-link {
+    color: #91aaa7;
+}
+
+body.dark-mode .sidebar-link:hover {
+    background: #1c3231;
+
+    color: #8ee1d8;
+}
+
+body.dark-mode .sidebar-link.active {
+    background: #193b38;
+
+    color: #7eddd4;
+}
+
+body.dark-mode .sidebar-link.active .sidebar-icon {
+    background: #214945;
+}
+
+body.dark-mode .sidebar-bottom {
+    border-color: #263b3a;
+}
+
+body.dark-mode .sidebar-setting-button,
+body.dark-mode .sidebar-collapse-button,
+body.dark-mode .sidebar-logout-button {
+    color: #91aaa7;
+}
+
+body.dark-mode .sidebar-setting-button:hover,
+body.dark-mode .sidebar-collapse-button:hover {
+    background: #1c3231;
+
+    color: #8ee1d8;
+}
+
+body.dark-mode .sidebar-logout-button:hover {
+    background: #3a2525;
+
+    color: #ff8585;
+}
+
+body.dark-mode .theme-toggle-indicator {
+    background: #214945;
+
+    color: #7eddd4;
+}
+
+body.dark-mode .app-main {
+    background: #101b1b;
+}
+
+body.dark-mode .smartbank-topbar {
+    background: #142323;
+
+    border-color: #263b3a;
+}
+
+body.dark-mode .topbar-page-name {
+    color: #789493;
+}
+
+body.dark-mode .topbar-theme-button {
+    background: #1b302f;
+
+    border-color: #304746;
+
+    color: #8ee1d8;
+}
+
+body.dark-mode .topbar-theme-button:hover {
+    background: #23403e;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .smartbank-sidebar {
+        width: 275px;
+
+        transform: translateX(-100%);
+
+        box-shadow:
+            12px 0 35px rgba(
+                0,
+                0,
+                0,
+                0.12
+            );
+    }
+
+    .smartbank-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .sidebar-collapsed .smartbank-sidebar {
+        width: 275px;
+    }
+
+    .sidebar-collapsed .sidebar-brand {
+        justify-content: flex-start;
+
+        padding: 0 18px;
+    }
+
+    .sidebar-collapsed .brand-text {
+        width: auto;
+
+        opacity: 1;
+    }
+
+    .sidebar-collapsed .sidebar-link {
+        justify-content: flex-start;
+
+        padding: 0 13px;
+    }
+
+    .sidebar-collapsed .sidebar-link-text {
+        width: auto;
+
+        opacity: 1;
+    }
+
+    .sidebar-collapsed .sidebar-section-title {
+        width: auto;
+
+        height: auto;
+
+        padding: 0 12px;
+
+        margin-bottom: 10px;
+
+        opacity: 1;
+    }
+
+    .sidebar-collapsed .sidebar-setting-button,
+    .sidebar-collapsed .sidebar-collapse-button,
+    .sidebar-collapsed .sidebar-logout-button {
+        justify-content: flex-start;
+
+        padding: 0 13px;
+    }
+
+    .sidebar-collapsed .theme-toggle-indicator {
+        display: block;
+    }
+
+    .sidebar-collapsed .sidebar-link.active::before {
+        left: 0;
+    }
+
+    .sidebar-close-mobile {
+        display: flex;
+
+        margin-left: auto;
+
+        width: 35px;
+        height: 35px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+
+        border-radius: 8px;
+
+        background: transparent;
+
+        color: #718989;
+
+        font-size: 24px;
+
+        cursor: pointer;
+    }
+
+    .mobile-sidebar-overlay {
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(
+            0,
+            0,
+            0,
+            0.42
+        );
+
+        z-index: 950;
+    }
+
+    .app-main,
+    .sidebar-collapsed .app-main {
+        margin-left: 0;
+    }
+
+    .smartbank-topbar {
+        height: 68px;
+
+        padding: 0 18px;
+    }
+
+    .mobile-menu-button {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .topbar-left {
+        margin-right: auto;
+
+        margin-left: 14px;
+    }
+
+    .topbar-page-name {
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .smartbank-topbar {
+        padding: 0 14px;
+    }
+
+    .topbar-theme-button {
+        width: 38px;
+        height: 38px;
+    }
+}

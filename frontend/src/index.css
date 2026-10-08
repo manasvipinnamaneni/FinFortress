@@ -1,0 +1,12320 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+}
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: #f3f8f7;
+
+    color: #062b32;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION LAYOUT
+========================================================= */
+
+.app-layout {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    background: #f3f8f7;
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    width: 258px;
+
+    min-width: 258px;
+
+    height: 100vh;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            180deg,
+            #08665f 0%,
+            #075e59 100%
+        );
+
+    color: white;
+
+    padding: 34px 16px 24px;
+
+}
+
+
+/* BRAND */
+
+.sidebar-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 8px;
+
+    margin-bottom: 56px;
+
+}
+
+
+.brand-logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #15c4c5;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+}
+
+
+.brand-text h1 {
+
+    font-size: 18px;
+
+    line-height: 1.1;
+
+    font-weight: 750;
+
+    letter-spacing: -0.3px;
+
+}
+
+
+.brand-text span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.72
+    );
+
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+========================================================= */
+
+.sidebar-menu {
+
+    flex: 1;
+
+}
+
+
+.menu-title {
+
+    margin: 0 10px 16px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.58
+    );
+
+}
+
+
+.sidebar-menu nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.sidebar-link {
+
+    height: 47px;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 0 16px;
+
+    border-radius: 10px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.88
+    );
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.sidebar-link:hover {
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+    color: white;
+
+}
+
+
+.sidebar-link.active {
+
+    background: #119d98;
+
+    color: white;
+
+}
+
+
+.sidebar-icon {
+
+    width: 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+}
+
+
+.security-box {
+
+    min-height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 12px;
+
+    margin-bottom: 14px;
+
+    border-radius: 10px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+}
+
+
+.security-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #16c2c1;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+}
+
+
+.security-box strong {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+
+.security-box span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 10px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.68
+    );
+
+}
+
+
+.sidebar-logout {
+
+    width: 100%;
+
+    height: 40px;
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.22
+    );
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    transition:
+        background 0.2s ease;
+
+}
+
+
+.sidebar-logout:hover {
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+}
+
+
+/* =========================================================
+   RIGHT APPLICATION AREA
+========================================================= */
+
+.app-main {
+
+    width: calc(
+        100% - 258px
+    );
+
+    min-height: 100vh;
+
+    margin-left: 258px;
+
+}
+
+
+/* =========================================================
+   SINGLE HEADER
+========================================================= */
+
+.app-header {
+
+    height: 92px;
+
+    width: 100%;
+
+    background: white;
+
+    border-bottom: 1px solid #e3ebea;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 38px;
+
+}
+
+
+.header-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.header-label {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    color: #71918f;
+
+}
+
+
+.header-left h2 {
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    color: #082f36;
+
+    font-weight: 750;
+
+}
+
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.notification-button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid #dfe9e8;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #16434a;
+
+    font-size: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.notification-button:hover {
+
+    background: #f5faf9;
+
+}
+
+
+.header-user {
+
+    border: none;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 3px;
+
+}
+
+
+.header-avatar {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e3f2f2;
+
+    color: #07827d;
+
+    font-size: 16px;
+
+    font-weight: 750;
+
+}
+
+
+.header-user-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 3px;
+
+}
+
+
+.header-user-info strong {
+
+    font-size: 12px;
+
+    color: #082f36;
+
+}
+
+
+.header-user-info span {
+
+    font-size: 9px;
+
+    color: #78908f;
+
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.page-content {
+
+    min-height: calc(
+        100vh - 92px
+    );
+
+    background: #f3f8f7;
+
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard-page {
+
+    width: 100%;
+
+    max-width: 1360px;
+
+    margin: 0 auto;
+
+    padding: 36px 38px 60px;
+
+}
+
+
+/* WELCOME */
+
+.dashboard-welcome {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+
+}
+
+
+.welcome-label {
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+
+    color: #71918f;
+
+}
+
+
+.dashboard-welcome h1 {
+
+    font-size: 30px;
+
+    line-height: 1.15;
+
+    font-weight: 750;
+
+    letter-spacing: -0.7px;
+
+    color: #062d35;
+
+}
+
+
+.welcome-description {
+
+    margin-top: 7px;
+
+    color: #789493;
+
+    font-size: 12px;
+
+}
+
+
+.today-card {
+
+    min-width: 108px;
+
+    padding: 12px 16px;
+
+    border: 1px solid #dfe9e8;
+
+    border-radius: 11px;
+
+    background: white;
+
+    text-align: center;
+
+}
+
+
+.today-card span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #789493;
+
+}
+
+
+.today-card strong {
+
+    font-size: 11px;
+
+    color: #092f36;
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.dashboard-error {
+
+    padding: 14px 16px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 10px;
+
+    background: #fff1f2;
+
+    color: #c24141;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    font-size: 13px;
+
+}
+
+
+.dashboard-error button {
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 8px 13px;
+
+    background: #08665f;
+
+    color: white;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   FINANCIAL LAYOUT
+========================================================= */
+
+.financial-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        1.05fr
+        1fr;
+
+    gap: 20px;
+
+    align-items: stretch;
+
+}
+
+
+/* =========================================================
+   MAIN BALANCE CARD
+========================================================= */
+
+.main-balance-card {
+
+    min-height: 252px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #dfe9e8;
+
+    border-radius: 19px;
+
+    padding: 35px 30px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            19,
+            74,
+            70,
+            0.035
+        );
+
+}
+
+
+.main-balance-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    right: -60px;
+
+    bottom: -70px;
+
+    border: 1px solid #d9e8e6;
+
+    border-radius: 50%;
+
+}
+
+
+.balance-label {
+
+    font-size: 10px;
+
+    letter-spacing: 2.2px;
+
+    font-weight: 700;
+
+    color: #769391;
+
+}
+
+
+.balance-value {
+
+    margin-top: 14px;
+
+    font-size: 37px;
+
+    line-height: 1;
+
+    font-weight: 750;
+
+    letter-spacing: -1.2px;
+
+    color: #073c43;
+
+}
+
+
+.balance-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #e5eeed;
+
+    margin-top: 30px;
+
+}
+
+
+.balance-caption {
+
+    margin-top: 13px;
+
+    font-size: 11px;
+
+    color: #79918f;
+
+}
+
+
+/* =========================================================
+   BANK CARD
+========================================================= */
+
+.bank-card {
+
+    min-height: 252px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 26px 26px 23px;
+
+    border-radius: 19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #076b65 0%,
+            #045e59 55%,
+            #07534f 100%
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 25px
+        rgba(
+            5,
+            91,
+            84,
+            0.16
+        );
+
+}
+
+
+.bank-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 190px;
+
+    right: -65px;
+
+    bottom: -90px;
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.10
+    );
+
+    border-radius: 50%;
+
+}
+
+
+.bank-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 135px;
+
+    height: 135px;
+
+    right: -35px;
+
+    bottom: -60px;
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+    border-radius: 50%;
+
+}
+
+
+.card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.card-top strong {
+
+    font-size: 18px;
+
+    letter-spacing: -0.4px;
+
+}
+
+
+.card-top span {
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    opacity: 0.8;
+
+}
+
+
+/* CHIP */
+
+.chip {
+
+    width: 43px;
+
+    height: 32px;
+
+    margin-top: 25px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e4c870,
+            #c9aa51
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.chip span {
+
+    position: absolute;
+
+    border: 1px solid rgba(
+        80,
+        60,
+        10,
+        0.35
+    );
+
+}
+
+
+.chip span:nth-child(1) {
+
+    width: 100%;
+
+    height: 1px;
+
+    top: 50%;
+
+    left: 0;
+
+}
+
+
+.chip span:nth-child(2) {
+
+    width: 1px;
+
+    height: 100%;
+
+    left: 50%;
+
+    top: 0;
+
+}
+
+
+.chip span:nth-child(3) {
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    top: 6px;
+
+    left: 11px;
+
+}
+
+
+/* CARD NUMBER */
+
+.card-number {
+
+    margin-top: 25px;
+
+    font-size: 19px;
+
+    letter-spacing: 2px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* CARD BOTTOM */
+
+.card-bottom {
+
+    position: absolute;
+
+    left: 26px;
+
+    right: 26px;
+
+    bottom: 23px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    z-index: 3;
+
+}
+
+
+.card-bottom span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.68;
+
+}
+
+
+.card-bottom strong {
+
+    display: block;
+
+    max-width: 190px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+/* MASTERCARD */
+
+.mastercard {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.mastercard span {
+
+    width: 23px;
+
+    height: 23px;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    opacity: 1;
+
+}
+
+
+.mastercard span:first-child {
+
+    background: #ed403e;
+
+}
+
+
+.mastercard span:last-child {
+
+    background: #f7ad12;
+
+    margin-left: -7px;
+
+}
+
+
+/* =========================================================
+   INCOME / EXPENSE
+========================================================= */
+
+.income-expense-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+}
+
+
+.summary-card {
+
+    flex: 1;
+
+    min-height: 118px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 17px;
+
+    border: 1px solid #dfe9e8;
+
+}
+
+
+.income-card {
+
+    border-top: 2px solid #0fbd91;
+
+}
+
+
+.expense-card {
+
+    border-top: 2px solid #ff6b68;
+
+}
+
+
+.summary-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 19px;
+
+}
+
+
+.income-icon {
+
+    color: #0fa57d;
+
+    background: #e5f8f2;
+
+}
+
+
+.expense-icon {
+
+    color: #f05a5a;
+
+    background: #fff0ef;
+
+}
+
+
+.summary-content {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.summary-content > span {
+
+    font-size: 9px;
+
+    color: #6f8987;
+
+}
+
+
+.summary-content strong {
+
+    margin-top: 3px;
+
+    font-size: 22px;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.4px;
+
+    color: #07353d;
+
+}
+
+
+.summary-content small {
+
+    margin-top: 4px;
+
+    font-size: 8px;
+
+    color: #849997;
+
+}
+
+
+.summary-period {
+
+    margin-left: auto;
+
+    text-align: right;
+
+    font-size: 8px;
+
+    line-height: 1.35;
+
+    color: #809795;
+
+}
+
+
+/* =========================================================
+   LOWER GRID
+========================================================= */
+
+.dashboard-lower-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        0.92fr;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================================
+   RECENT TRANSACTIONS
+========================================================= */
+
+.recent-transactions-card {
+
+    background: white;
+
+    border: 1px solid #dfe9e8;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+}
+
+
+.section-heading {
+
+    padding: 24px 26px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e7efee;
+
+}
+
+
+.section-heading > div > span {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #75918e;
+
+    font-weight: 700;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 5px;
+
+    font-size: 21px;
+
+    color: #07343b;
+
+}
+
+
+.section-heading p {
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #849a98;
+
+}
+
+
+.view-all-button {
+
+    border: none;
+
+    background: #e8f7f5;
+
+    color: #087f79;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.view-all-button:hover {
+
+    background: #d8f0ed;
+
+}
+
+
+/* TRANSACTION LIST */
+
+.dashboard-transaction-list {
+
+    padding: 0 26px;
+
+}
+
+
+.dashboard-transaction {
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #edf2f1;
+
+}
+
+
+.dashboard-transaction:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.transaction-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.transaction-circle {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+}
+
+
+.transaction-circle.deposit {
+
+    background: #e5f8f1;
+
+    color: #0eae7f;
+
+}
+
+
+.transaction-circle.withdrawal {
+
+    background: #fff0ef;
+
+    color: #ed5c5a;
+
+}
+
+
+.transaction-circle.transfer {
+
+    background: #eef1ff;
+
+    color: #5267d8;
+
+}
+
+
+.transaction-info h3 {
+
+    font-size: 12px;
+
+    color: #102f35;
+
+}
+
+
+.transaction-info p {
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #7b9190;
+
+    text-transform: capitalize;
+
+}
+
+
+.transaction-info small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    color: #a0aeac;
+
+}
+
+
+.transaction-amount {
+
+    text-align: right;
+
+}
+
+
+.transaction-amount strong {
+
+    display: block;
+
+    font-size: 11px;
+
+}
+
+
+.transaction-amount strong.positive {
+
+    color: #0ca174;
+
+}
+
+
+.transaction-amount strong.negative {
+
+    color: #ef4545;
+
+}
+
+
+.success-badge {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    padding: 3px 7px;
+
+    border-radius: 10px;
+
+    background: #e7f8f0;
+
+    color: #10986f;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+}
+
+
+/* EMPTY */
+
+.empty-transactions {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+}
+
+
+.empty-transactions h3 {
+
+    font-size: 15px;
+
+    color: #183c42;
+
+}
+
+
+.empty-transactions p {
+
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    color: #849997;
+
+}
+
+
+/* =========================================================
+   AI SECURITY
+========================================================= */
+
+.ai-security-card {
+
+    min-height: 260px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #dfe9e8;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+}
+
+
+.ai-security-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    right: -62px;
+
+    top: -60px;
+
+    border: 12px solid #e8f2f1;
+
+    border-radius: 50%;
+
+}
+
+
+.security-label {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #78928f;
+
+    font-weight: 700;
+
+}
+
+
+.robot-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    margin-top: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #e8f7f5;
+
+    font-size: 22px;
+
+}
+
+
+.ai-security-card h2 {
+
+    margin-top: 18px;
+
+    font-size: 19px;
+
+    color: #07353d;
+
+}
+
+
+.ai-security-card p {
+
+    margin-top: 8px;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    color: #748d8b;
+
+}
+
+
+.ai-active {
+
+    margin-top: 19px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #0da77d;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.ai-active span {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #19bf8f;
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.dashboard-loading {
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.dashboard-loading h2 {
+
+    margin-top: 16px;
+
+    font-size: 20px;
+
+    color: #07353b;
+
+}
+
+
+.dashboard-loading p {
+
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    color: #809795;
+
+}
+
+
+.loading-spinner {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: 3px solid #dcebea;
+
+    border-top-color: #08736d;
+
+    border-radius: 50%;
+
+    animation:
+        dashboardSpin
+        0.8s linear infinite;
+
+}
+
+
+@keyframes dashboardSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .financial-layout {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+    }
+
+
+    .income-expense-column {
+
+        grid-column: 1 / -1;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+    }
+
+
+    .dashboard-lower-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+
+        width: 220px;
+
+        min-width: 220px;
+
+    }
+
+
+    .app-main {
+
+        width: calc(
+            100% - 220px
+        );
+
+        margin-left: 220px;
+
+    }
+
+
+    .financial-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .income-expense-column {
+
+        grid-column: auto;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dashboard-page {
+
+        padding: 28px 22px 50px;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar {
+
+        width: 75px;
+
+        min-width: 75px;
+
+        padding: 25px 10px;
+
+    }
+
+
+    .brand-text,
+    .menu-title,
+    .sidebar-link span:last-child,
+    .security-box div:last-child,
+    .sidebar-logout {
+
+        display: none;
+
+    }
+
+
+    .sidebar-brand {
+
+        justify-content: center;
+
+        padding: 0;
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .sidebar-link {
+
+        justify-content: center;
+
+        padding: 0;
+
+    }
+
+
+    .security-box {
+
+        justify-content: center;
+
+        padding: 8px;
+
+    }
+
+
+    .app-main {
+
+        width: calc(
+            100% - 75px
+        );
+
+        margin-left: 75px;
+
+    }
+
+
+    .app-header {
+
+        height: 78px;
+
+        padding: 0 18px;
+
+    }
+
+
+    .header-user-info {
+
+        display: none;
+
+    }
+
+
+    .dashboard-page {
+
+        padding: 24px 16px 40px;
+
+    }
+
+
+    .dashboard-welcome {
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+    }
+
+
+    .dashboard-welcome h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .today-card {
+
+        min-width: 95px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .dashboard-welcome {
+
+        flex-direction: column;
+
+    }
+
+
+    .financial-layout {
+
+        gap: 14px;
+
+    }
+
+
+    .main-balance-card,
+    .bank-card {
+
+        min-height: 235px;
+
+    }
+
+
+    .card-number {
+
+        font-size: 16px;
+
+    }
+
+
+    .summary-card {
+
+        padding: 17px;
+
+    }
+
+
+    .section-heading {
+
+        padding: 20px 18px;
+
+    }
+
+
+    .dashboard-transaction-list {
+
+        padding: 0 18px;
+
+    }
+
+}
+
+/* =========================================================
+   SMARTBANK - COLLAPSIBLE SIDEBAR + DARK MODE
+   Paste this at the VERY BOTTOM of index.css
+========================================================= */
+
+
+/* =========================================================
+   SIDEBAR COLLAPSE
+========================================================= */
+
+.app-layout.sidebar-collapsed .sidebar {
+    width: 78px;
+    min-width: 78px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.app-layout.sidebar-collapsed .app-main {
+    width: calc(100% - 78px);
+    margin-left: 78px;
+}
+
+
+/* Hide brand text */
+
+.app-layout.sidebar-collapsed .brand-text {
+    display: none;
+}
+
+
+/* Center logo */
+
+.app-layout.sidebar-collapsed .sidebar-brand {
+    justify-content: center;
+}
+
+.app-layout.sidebar-collapsed .brand-logo {
+    margin: 0;
+}
+
+
+/* Hide menu titles */
+
+.app-layout.sidebar-collapsed .menu-title {
+    display: none;
+}
+
+
+/* Center menu links */
+
+.app-layout.sidebar-collapsed .sidebar-link {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-layout.sidebar-collapsed .sidebar-link span:not(.sidebar-icon) {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed .sidebar-icon {
+    margin: 0;
+}
+
+
+/* Security box */
+
+.app-layout.sidebar-collapsed .security-box {
+    padding: 12px 5px;
+    justify-content: center;
+}
+
+.app-layout.sidebar-collapsed .security-box > div:not(.security-icon) {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed .security-icon {
+    margin: 0;
+}
+
+
+/* Logout */
+
+.app-layout.sidebar-collapsed .sidebar-logout {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-layout.sidebar-collapsed .sidebar-logout span:not(.sidebar-icon) {
+    display: none;
+}
+
+
+/* =========================================================
+   COLLAPSE BUTTON
+========================================================= */
+
+.sidebar-collapse-button {
+    position: absolute;
+    top: 82px;
+    right: -14px;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+    border: 1px solid #d7e5e3;
+
+    background: #ffffff;
+    color: #07595a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+    z-index: 1000;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-collapse-button:hover {
+    background: #eaf7f5;
+    color: #057b75;
+    transform: scale(1.05);
+}
+
+
+/* Arrow direction */
+
+.sidebar-collapse-button.collapsed {
+    transform: rotate(180deg);
+}
+
+.sidebar-collapse-button.collapsed:hover {
+    transform: rotate(180deg) scale(1.05);
+}
+
+
+/* =========================================================
+   SIDEBAR TRANSITIONS
+========================================================= */
+
+.sidebar {
+    transition:
+        width 0.25s ease,
+        min-width 0.25s ease,
+        padding 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.app-main {
+    transition:
+        width 0.25s ease,
+        margin-left 0.25s ease,
+        background 0.25s ease;
+}
+
+.sidebar-link {
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        padding 0.25s ease;
+}
+
+
+/* =========================================================
+   DARK MODE - GLOBAL
+========================================================= */
+
+body.dark-mode {
+    background: #0f1f1f;
+    color: #e7f3f1;
+}
+
+body.dark-mode .app-layout {
+    background: #0f1f1f;
+}
+
+body.dark-mode .app-main {
+    background: #0f1f1f;
+}
+
+body.dark-mode .page-content {
+    background: #0f1f1f;
+}
+
+
+/* =========================================================
+   DARK MODE - SIDEBAR
+========================================================= */
+
+body.dark-mode .sidebar {
+    background: #142727;
+    border-color: #263d3c;
+    color: #e7f3f1;
+}
+
+body.dark-mode .sidebar-brand {
+    color: #f2fbfa;
+}
+
+body.dark-mode .brand-text h1 {
+    color: #f2fbfa;
+}
+
+body.dark-mode .brand-text span {
+    color: #91aaa8;
+}
+
+body.dark-mode .menu-title {
+    color: #718b89;
+}
+
+body.dark-mode .sidebar-link {
+    color: #a9c0be;
+}
+
+body.dark-mode .sidebar-link:hover {
+    background: #1c3938;
+    color: #ffffff;
+}
+
+body.dark-mode .sidebar-link.active {
+    background: #174b49;
+    color: #ffffff;
+}
+
+body.dark-mode .sidebar-icon {
+    color: inherit;
+}
+
+body.dark-mode .security-box {
+    background: #193332;
+    border-color: #294744;
+}
+
+body.dark-mode .security-box strong {
+    color: #dff1ee;
+}
+
+body.dark-mode .security-box span {
+    color: #8fa9a7;
+}
+
+body.dark-mode .sidebar-logout {
+    color: #a9c0be;
+}
+
+body.dark-mode .sidebar-logout:hover {
+    background: #352222;
+    color: #ffaaaa;
+}
+
+
+/* =========================================================
+   DARK MODE - COLLAPSE BUTTON
+========================================================= */
+
+body.dark-mode .sidebar-collapse-button {
+    background: #1b3635;
+    border-color: #365451;
+    color: #dff5f2;
+}
+
+body.dark-mode .sidebar-collapse-button:hover {
+    background: #24504d;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DARK MODE - HEADER
+========================================================= */
+
+body.dark-mode .app-header {
+    background: #142727;
+    border-color: #293f3e;
+}
+
+body.dark-mode .header-label {
+    color: #789492;
+}
+
+body.dark-mode .header-left h2 {
+    color: #eef8f6;
+}
+
+body.dark-mode .header-user {
+    color: #e6f3f1;
+}
+
+body.dark-mode .header-user-info strong {
+    color: #e6f3f1;
+}
+
+body.dark-mode .header-user-info span {
+    color: #8fa8a6;
+}
+
+body.dark-mode .notification-button {
+    background: #1b3534;
+    border-color: #304846;
+    color: #c9dfdc;
+}
+
+body.dark-mode .notification-button:hover {
+    background: #244644;
+}
+
+
+/* =========================================================
+   DARK MODE - DASHBOARD
+========================================================= */
+
+body.dark-mode .dashboard-page {
+    background: #0f1f1f;
+}
+
+body.dark-mode .dashboard-welcome h1 {
+    color: #eef8f6;
+}
+
+body.dark-mode .dashboard-welcome p {
+    color: #8fa9a7;
+}
+
+
+/* Balance card */
+
+body.dark-mode .main-balance-card {
+    background: #173d3b;
+    border-color: #285451;
+}
+
+body.dark-mode .main-balance-card h2,
+body.dark-mode .main-balance-card strong {
+    color: #ffffff;
+}
+
+body.dark-mode .main-balance-card p,
+body.dark-mode .main-balance-card span {
+    color: #a9c4c1;
+}
+
+
+/* Bank card */
+
+body.dark-mode .bank-card {
+    border-color: #365552;
+}
+
+
+/* Summary cards */
+
+body.dark-mode .summary-card {
+    background: #142727;
+    border-color: #2a4240;
+}
+
+body.dark-mode .summary-card h3 {
+    color: #e7f3f1;
+}
+
+body.dark-mode .summary-card p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .summary-card strong {
+    color: #eef8f6;
+}
+
+
+/* =========================================================
+   DARK MODE - TRANSACTIONS
+========================================================= */
+
+body.dark-mode .recent-transactions-card {
+    background: #142727;
+    border-color: #2a4240;
+}
+
+body.dark-mode .recent-transactions-card h2 {
+    color: #edf8f6;
+}
+
+body.dark-mode .recent-transactions-card p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .transaction-row {
+    border-color: #29413f;
+}
+
+body.dark-mode .transaction-row:hover {
+    background: #193231;
+}
+
+body.dark-mode .transaction-details strong {
+    color: #e8f4f2;
+}
+
+body.dark-mode .transaction-details span {
+    color: #8da6a4;
+}
+
+
+/* =========================================================
+   DARK MODE - AI SECURITY
+========================================================= */
+
+body.dark-mode .ai-security-card {
+    background: #142727;
+    border-color: #2b4442;
+}
+
+body.dark-mode .ai-security-card h2 {
+    color: #edf8f6;
+}
+
+body.dark-mode .ai-security-card p {
+    color: #8fa9a7;
+}
+
+
+/* =========================================================
+   DARK MODE - PROFILE
+========================================================= */
+
+body.dark-mode .profile-page {
+    background: #0f1f1f;
+}
+
+body.dark-mode .profile-page h1,
+body.dark-mode .profile-page h2,
+body.dark-mode .profile-page h3 {
+    color: #edf8f6;
+}
+
+body.dark-mode .profile-page p,
+body.dark-mode .profile-page span,
+body.dark-mode .profile-page label {
+    color: #91aaa8;
+}
+
+body.dark-mode .profile-card,
+body.dark-mode .profile-section,
+body.dark-mode .profile-info-card {
+    background: #142727;
+    border-color: #2a4240;
+}
+
+body.dark-mode .profile-card strong,
+body.dark-mode .profile-section strong {
+    color: #e8f4f2;
+}
+
+
+/* =========================================================
+   DARK MODE - MAKE TRANSACTION
+========================================================= */
+
+body.dark-mode .make-transaction-page {
+    background: #0f1f1f;
+}
+
+body.dark-mode .make-transaction-header h1 {
+    color: #edf8f6;
+}
+
+body.dark-mode .make-transaction-header p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .transaction-form-card,
+body.dark-mode .ai-protection-card {
+    background: #142727;
+    border-color: #2a4240;
+}
+
+body.dark-mode .transaction-form-card h2,
+body.dark-mode .ai-protection-card h2 {
+    color: #edf8f6;
+}
+
+body.dark-mode .transaction-form-description,
+body.dark-mode .ai-card-description {
+    color: #8fa9a7;
+}
+
+body.dark-mode .available-balance {
+    background: #193332;
+    border-color: #2c4946;
+}
+
+body.dark-mode .available-balance span {
+    color: #8fa9a7;
+}
+
+body.dark-mode .available-balance strong {
+    color: #edf8f6;
+}
+
+body.dark-mode .form-group label {
+    color: #c8dcda;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: #102323;
+    border-color: #35504d;
+    color: #edf8f6;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #6f8987;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group select:focus,
+body.dark-mode .form-group textarea:focus {
+    background: #132b2a;
+    border-color: #0c9189;
+}
+
+
+/* AI risk */
+
+body.dark-mode .ai-risk-item span {
+    color: #8fa9a7;
+}
+
+body.dark-mode .ai-risk-item strong {
+    color: #e6f3f1;
+}
+
+body.dark-mode .ai-progress-header span {
+    color: #8fa9a7;
+}
+
+body.dark-mode .ai-progress-header strong {
+    color: #e6f3f1;
+}
+
+body.dark-mode .ai-progress-bar {
+    background: #29403e;
+}
+
+body.dark-mode .ai-decision {
+    background: #193332;
+    border-color: #2c4946;
+}
+
+body.dark-mode .ai-decision strong {
+    color: #dcefeb;
+}
+
+body.dark-mode .ai-decision p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .ai-reason {
+    background: #102323;
+}
+
+body.dark-mode .ai-reason strong {
+    color: #cce3e0;
+}
+
+body.dark-mode .ai-reason p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .ai-analysis-info {
+    border-color: #29413f;
+}
+
+body.dark-mode .ai-analysis-info > strong {
+    color: #d7ebe8;
+}
+
+body.dark-mode .ai-analysis-step p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .ai-protection-status {
+    border-color: #29413f;
+}
+
+body.dark-mode .ai-protection-status strong {
+    color: #62c5a8;
+}
+
+body.dark-mode .ai-protection-status small {
+    color: #7f9997;
+}
+
+
+/* =========================================================
+   DARK MODE - BUTTONS
+========================================================= */
+
+body.dark-mode .back-dashboard-button {
+    background: #193332;
+    border-color: #34514e;
+    color: #bfe0dc;
+}
+
+body.dark-mode .back-dashboard-button:hover {
+    background: #234543;
+    border-color: #45625f;
+}
+
+
+/* =========================================================
+   DARK MODE - LOADING
+========================================================= */
+
+body.dark-mode .make-transaction-loading {
+    background: #0f1f1f;
+    color: #edf8f6;
+}
+
+body.dark-mode .make-transaction-loading p {
+    color: #8fa9a7;
+}
+
+
+/* =========================================================
+   DARK MODE - TABLES
+========================================================= */
+
+body.dark-mode table {
+    color: #dcefeb;
+}
+
+body.dark-mode th {
+    background: #193332;
+    color: #cde2df;
+    border-color: #2d4845;
+}
+
+body.dark-mode td {
+    border-color: #2a4240;
+    color: #b8cfcc;
+}
+
+body.dark-mode tr:hover {
+    background: #193332;
+}
+
+
+/* =========================================================
+   DARK MODE - COMMON CARDS
+========================================================= */
+
+body.dark-mode .card,
+body.dark-mode .dashboard-card,
+body.dark-mode .content-card {
+    background: #142727;
+    border-color: #2a4240;
+}
+
+
+/* =========================================================
+   DARK MODE - SCROLLBAR
+========================================================= */
+
+body.dark-mode ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #102222;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #355350;
+    border-radius: 10px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #4a6965;
+}
+
+
+/* =========================================================
+   SMOOTH THEME TRANSITION
+========================================================= */
+
+body,
+.app-layout,
+.sidebar,
+.app-main,
+.app-header,
+.page-content,
+.sidebar-link,
+.main-balance-card,
+.bank-card,
+.summary-card,
+.recent-transactions-card,
+.ai-security-card,
+.profile-card,
+.profile-section,
+.transaction-form-card,
+.ai-protection-card,
+.form-group input,
+.form-group select,
+.form-group textarea {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .app-layout.sidebar-collapsed .sidebar {
+        width: 78px;
+        min-width: 78px;
+    }
+
+    .app-layout.sidebar-collapsed .app-main {
+        width: calc(100% - 78px);
+        margin-left: 78px;
+    }
+
+    .sidebar-collapse-button {
+        display: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .app-layout.sidebar-collapsed .sidebar {
+        width: 0;
+        min-width: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .app-layout.sidebar-collapsed .app-main {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* =========================================================
+   FIX - MAIN BALANCE VISIBILITY IN DARK MODE
+========================================================= */
+
+body.dark-mode .main-balance-card {
+    background: #173d3b;
+    border-color: #285451;
+}
+
+body.dark-mode .main-balance-card .balance-label {
+    color: #a8c5c2;
+}
+
+body.dark-mode .main-balance-card .balance-value {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .main-balance-card .balance-line {
+    background: #6c9290;
+}
+
+body.dark-mode .main-balance-card .available-label {
+    color: #a8c5c2;
+}
+
+
+/* If the available balance text uses a different class */
+body.dark-mode .main-balance-card span {
+    color: #a8c5c2;
+}
+
+
+/* Make the balance card decorative circle visible */
+body.dark-mode .main-balance-card::after {
+    border-color: #507572;
+}
+
+/* =========================================================
+   TRANSACTIONS PAGE - DARK MODE FIX
+========================================================= */
+
+
+/* Main transactions page */
+
+body.dark-mode .transactions-page {
+    background: #0f1f1f !important;
+    color: #e7f3f1;
+}
+
+
+/* Page heading */
+
+body.dark-mode .transactions-page h1 {
+    color: #f2fbfa !important;
+}
+
+body.dark-mode .transactions-page h2 {
+    color: #edf8f6 !important;
+}
+
+body.dark-mode .transactions-page h3 {
+    color: #e7f3f1 !important;
+}
+
+body.dark-mode .transactions-page p {
+    color: #8fa9a7 !important;
+}
+
+
+/* Overview label */
+
+body.dark-mode .transactions-page .page-label,
+body.dark-mode .transactions-page .overview-label,
+body.dark-mode .transactions-page .section-label {
+    color: #7fa09d !important;
+}
+
+
+/* =========================================================
+   ACCOUNT SUMMARY CARD
+========================================================= */
+
+body.dark-mode .transactions-page .account-summary,
+body.dark-mode .transactions-page .account-card,
+body.dark-mode .transactions-page .transaction-summary {
+    background: #142727 !important;
+    border-color: #2b4442 !important;
+    color: #e7f3f1 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Account number */
+
+body.dark-mode .transactions-page .account-summary strong,
+body.dark-mode .transactions-page .account-card strong,
+body.dark-mode .transactions-page .transaction-summary strong {
+    color: #f0faf8 !important;
+}
+
+
+/* Small labels */
+
+body.dark-mode .transactions-page .account-summary span,
+body.dark-mode .transactions-page .account-card span,
+body.dark-mode .transactions-page .transaction-summary span {
+    color: #8fa9a7 !important;
+}
+
+
+/* =========================================================
+   TRANSACTION HISTORY CARD
+========================================================= */
+
+body.dark-mode .transactions-page .transactions-card,
+body.dark-mode .transactions-page .transaction-history-card,
+body.dark-mode .transactions-page .history-card {
+    background: #142727 !important;
+    border-color: #2b4442 !important;
+    color: #e7f3f1 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   TRANSACTION TABLE
+========================================================= */
+
+body.dark-mode .transactions-page table {
+    background: #142727 !important;
+    color: #e7f3f1 !important;
+}
+
+
+/* Table header */
+
+body.dark-mode .transactions-page thead {
+    background: #193332 !important;
+}
+
+body.dark-mode .transactions-page th {
+    background: #193332 !important;
+    color: #91aaa8 !important;
+    border-color: #2c4644 !important;
+}
+
+
+/* Table rows */
+
+body.dark-mode .transactions-page tbody {
+    background: #142727 !important;
+}
+
+body.dark-mode .transactions-page tr {
+    background: #142727 !important;
+    border-color: #2a4240 !important;
+}
+
+body.dark-mode .transactions-page tbody tr:hover {
+    background: #193332 !important;
+}
+
+
+/* Table cells */
+
+body.dark-mode .transactions-page td {
+    background: transparent !important;
+    color: #c5d9d6 !important;
+    border-color: #2a4240 !important;
+}
+
+
+/* =========================================================
+   TRANSACTION NAME
+========================================================= */
+
+body.dark-mode .transactions-page .transaction-name,
+body.dark-mode .transactions-page .transaction-title {
+    color: #edf8f6 !important;
+}
+
+body.dark-mode .transactions-page .transaction-name strong,
+body.dark-mode .transactions-page .transaction-title strong {
+    color: #edf8f6 !important;
+}
+
+body.dark-mode .transactions-page .transaction-name span,
+body.dark-mode .transactions-page .transaction-title span {
+    color: #819c99 !important;
+}
+
+
+/* =========================================================
+   TRANSACTION TYPE
+========================================================= */
+
+body.dark-mode .transactions-page .transaction-type {
+    color: #bdd2cf !important;
+}
+
+
+/* =========================================================
+   AMOUNTS
+========================================================= */
+
+body.dark-mode .transactions-page .transaction-amount {
+    color: #46c79d !important;
+}
+
+body.dark-mode .transactions-page .amount-positive {
+    color: #42c795 !important;
+}
+
+body.dark-mode .transactions-page .amount-negative {
+    color: #ff7373 !important;
+}
+
+
+/* =========================================================
+   DATE / TIME
+========================================================= */
+
+body.dark-mode .transactions-page .transaction-date,
+body.dark-mode .transactions-page .transaction-time,
+body.dark-mode .transactions-page .date-time {
+    color: #b7cdca !important;
+}
+
+body.dark-mode .transactions-page .transaction-date strong,
+body.dark-mode .transactions-page .date-time strong {
+    color: #dcebe8 !important;
+}
+
+body.dark-mode .transactions-page .transaction-date span,
+body.dark-mode .transactions-page .transaction-time span,
+body.dark-mode .transactions-page .date-time span {
+    color: #7d9794 !important;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+body.dark-mode .transactions-page .status {
+    color: #8de0c7 !important;
+}
+
+body.dark-mode .transactions-page .status.completed {
+    background: #153d35 !important;
+    color: #73d8bd !important;
+}
+
+body.dark-mode .transactions-page .status.pending {
+    background: #40351b !important;
+    color: #e7bd59 !important;
+}
+
+body.dark-mode .transactions-page .status.blocked {
+    background: #442525 !important;
+    color: #ff8585 !important;
+}
+
+
+/* =========================================================
+   TRANSACTION ICONS
+========================================================= */
+
+body.dark-mode .transactions-page .transaction-icon {
+    background: #193a38 !important;
+    color: #9edbd2 !important;
+}
+
+body.dark-mode .transactions-page .transaction-icon.withdrawal {
+    background: #432828 !important;
+    color: #ff8c8c !important;
+}
+
+body.dark-mode .transactions-page .transaction-icon.deposit {
+    background: #183d35 !important;
+    color: #72d9b6 !important;
+}
+
+body.dark-mode .transactions-page .transaction-icon.transfer {
+    background: #203a4a !important;
+    color: #7fbbe1 !important;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+body.dark-mode .transactions-page button {
+    color: #d8ebe8;
+}
+
+body.dark-mode .transactions-page .refresh-button {
+    background: #193332 !important;
+    border-color: #365451 !important;
+    color: #dcefeb !important;
+}
+
+body.dark-mode .transactions-page .refresh-button:hover {
+    background: #234543 !important;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+body.dark-mode .transactions-page .empty-state {
+    background: #142727 !important;
+    color: #d8ebe8 !important;
+}
+
+body.dark-mode .transactions-page .empty-state p {
+    color: #8fa9a7 !important;
+}
+
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+body.dark-mode .transactions-page .loading {
+    color: #dcefeb !important;
+}
+
+body.dark-mode .transactions-page .loading p {
+    color: #8fa9a7 !important;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+body.dark-mode .transactions-page .error {
+    background: #402525 !important;
+    border-color: #693a3a !important;
+    color: #ff9b9b !important;
+}
+
+
+/* =========================================================
+   TRANSACTION CARD DIVIDERS
+========================================================= */
+
+body.dark-mode .transactions-page hr {
+    border-color: #2a4240 !important;
+}
+
+
+/* =========================================================
+   FORCE TRANSACTIONS CONTENT DARK
+========================================================= */
+
+body.dark-mode .transactions-page > * {
+    color: inherit;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    body.dark-mode .transactions-page table {
+        background: #142727 !important;
+    }
+
+    body.dark-mode .transactions-page td,
+    body.dark-mode .transactions-page th {
+        border-color: #2a4240 !important;
+    }
+}
+
+/* =========================================================
+   SMARTBANK PROFILE PAGE
+   FINAL LIGHT + DARK MODE STYLES
+========================================================= */
+
+
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+.profile-page {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 36px 38px 60px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PROFILE HEADER
+========================================================= */
+
+.profile-page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.profile-page-label {
+    margin-bottom: 8px;
+    color: #6e8b89;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.profile-page-header h1 {
+    margin: 0;
+    color: #062d35;
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.profile-page-header p {
+    margin: 8px 0 0;
+    color: #789493;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DASHBOARD BUTTON
+========================================================= */
+
+.profile-dashboard-button {
+    min-width: 132px;
+    height: 45px;
+    padding: 0 18px;
+
+    border: 1px solid #cfe1df;
+    border-radius: 11px;
+
+    background: #ffffff;
+    color: #07595a;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-dashboard-button:hover {
+    background: #eef8f6;
+    border-color: #a9cfca;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PROFILE GRID
+========================================================= */
+
+.profile-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 0.95fr);
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-card {
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8e6;
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(
+            18,
+            70,
+            67,
+            0.045
+        );
+
+    box-sizing: border-box;
+}
+
+.profile-card-label {
+    margin-bottom: 8px;
+
+    color: #6d8d8a;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.profile-card h2 {
+    margin: 0;
+
+    color: #073c43;
+
+    font-size: 24px;
+    line-height: 1.25;
+
+    font-weight: 750;
+
+    letter-spacing: -0.4px;
+}
+
+.profile-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 21px 0 25px;
+
+    background: #e2ecea;
+}
+
+
+/* =========================================================
+   PROFILE USER HEADER
+========================================================= */
+
+.profile-user-header {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+}
+
+.profile-avatar {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dff3f0;
+
+    color: #087d75;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.profile-user-header h3 {
+    margin: 0 0 5px;
+
+    color: #103d42;
+
+    font-size: 20px;
+    font-weight: 750;
+}
+
+.profile-user-header p {
+    margin: 0;
+
+    color: #789391;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROFILE DETAILS
+========================================================= */
+
+.profile-details-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #e1ebe9;
+    border-left: 1px solid #e1ebe9;
+}
+
+.profile-detail {
+    min-width: 0;
+
+    padding: 17px 15px;
+
+    border-right: 1px solid #e1ebe9;
+    border-bottom: 1px solid #e1ebe9;
+}
+
+.profile-detail span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #789391;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.profile-detail strong {
+    display: block;
+
+    overflow-wrap: anywhere;
+
+    color: #123e43;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BALANCE
+========================================================= */
+
+.profile-balance-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    border-radius: 16px;
+
+    background: #087d75;
+
+    color: #ffffff;
+}
+
+.profile-balance-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -50px;
+    bottom: -65px;
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.22
+    );
+
+    border-radius: 50%;
+}
+
+.profile-balance-card span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.68
+    );
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.profile-balance-card strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 30px;
+    line-height: 1.1;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ACCOUNT DETAILS
+========================================================= */
+
+.profile-account-details {
+    width: 100%;
+}
+
+.profile-account-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height: 58px;
+
+    border-bottom: 1px solid #e2ecea;
+}
+
+.profile-account-row:last-child {
+    border-bottom: none;
+}
+
+.profile-account-row > span {
+    color: #789391;
+
+    font-size: 12px;
+}
+
+.profile-account-row > strong {
+    color: #123e43;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.profile-status {
+    display: inline-flex !important;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #16a77d !important;
+}
+
+.profile-status-dot {
+    width: 9px;
+    height: 9px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: #16c794;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            22,
+            199,
+            148,
+            0.12
+        );
+}
+
+
+/* =========================================================
+   SECURITY CARD
+========================================================= */
+
+.profile-security-card {
+    margin-top: 24px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8e6;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(
+            18,
+            70,
+            67,
+            0.045
+        );
+}
+
+.profile-security-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.profile-security-header h2 {
+    margin: 0;
+
+    color: #073c43;
+
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.profile-security-header p {
+    margin: 7px 0 0;
+
+    color: #789493;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.profile-security-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #e6f6f3;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   PASSWORD FORM
+========================================================= */
+
+.profile-password-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr)
+        auto;
+
+    gap: 16px;
+
+    align-items: end;
+}
+
+.profile-password-group {
+    min-width: 0;
+}
+
+.profile-password-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #234c4e;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-password-group input {
+    width: 100%;
+    height: 48px;
+
+    box-sizing: border-box;
+
+    padding: 0 14px;
+
+    border: 1px solid #d4e3e1;
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fbfdfd;
+
+    color: #173f42;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.profile-password-group input::placeholder {
+    color: #91a6a4;
+}
+
+.profile-password-group input:focus {
+    background: #ffffff;
+
+    border-color: #0c9189;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            12,
+            145,
+            137,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   PASSWORD BUTTON
+========================================================= */
+
+.profile-password-button {
+    height: 48px;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #07877f;
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-password-button:hover {
+    background: #06746d;
+
+    transform: translateY(-1px);
+}
+
+.profile-password-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   PASSWORD SUCCESS / ERROR
+========================================================= */
+
+.profile-password-success,
+.profile-password-error {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+}
+
+.profile-password-success {
+    background: #edf9f5;
+
+    border: 1px solid #d2eee5;
+
+    color: #13785f;
+}
+
+.profile-password-error {
+    background: #fff1f1;
+
+    border: 1px solid #f1d2d2;
+
+    color: #b13e3e;
+}
+
+.profile-password-success span,
+.profile-password-error span {
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INLINE ERROR
+========================================================= */
+
+.profile-inline-error {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    background: #fff1f1;
+
+    border: 1px solid #f0d0d0;
+
+    color: #b13e3e;
+
+    font-size: 13px;
+}
+
+.profile-inline-error span {
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f8dada;
+
+    color: #b13e3e;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.profile-loading {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f9f8;
+}
+
+.profile-loading-card {
+    text-align: center;
+}
+
+.profile-loading-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #087d75;
+    color: #ffffff;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.profile-loading-card h2 {
+    margin: 0 0 7px;
+
+    color: #073c43;
+
+    font-size: 22px;
+}
+
+.profile-loading-card p {
+    margin: 0;
+
+    color: #789493;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ERROR CARD
+========================================================= */
+
+.profile-error-card {
+    max-width: 500px;
+
+    margin: 80px auto;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e9e8;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.05
+        );
+}
+
+.profile-error-icon {
+    width: 48px;
+    height: 48px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffe1e1;
+
+    color: #c34444;
+
+    font-weight: 800;
+}
+
+.profile-error-card h2 {
+    margin: 0 0 8px;
+
+    color: #173f42;
+}
+
+.profile-error-card p {
+    margin: 0 0 20px;
+
+    color: #789493;
+
+    line-height: 1.6;
+}
+
+.profile-error-card button {
+    height: 42px;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #07877f;
+    color: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .profile-page {
+    background: #0f1f1f;
+    color: #e7f3f1;
+}
+
+body.dark-mode .profile-page-label {
+    color: #8baaa7;
+}
+
+body.dark-mode .profile-page-header h1 {
+    color: #f1faf8;
+}
+
+body.dark-mode .profile-page-header p {
+    color: #8fa9a7;
+}
+
+
+/* Dashboard button */
+
+body.dark-mode .profile-dashboard-button {
+    background: #193332;
+    border-color: #35524f;
+    color: #d7eeea;
+}
+
+body.dark-mode .profile-dashboard-button:hover {
+    background: #234543;
+    border-color: #48645f;
+}
+
+
+/* Cards */
+
+body.dark-mode .profile-card,
+body.dark-mode .profile-security-card {
+    background: #142727;
+    border-color: #2a4542;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+}
+
+body.dark-mode .profile-card-label {
+    color: #83a5a1;
+}
+
+body.dark-mode .profile-card h2 {
+    color: #eef8f6;
+}
+
+body.dark-mode .profile-divider {
+    background: #2a4441;
+}
+
+
+/* User */
+
+body.dark-mode .profile-avatar {
+    background: #1d4542;
+    color: #8ee0d4;
+}
+
+body.dark-mode .profile-user-header h3 {
+    color: #edf8f6;
+}
+
+body.dark-mode .profile-user-header p {
+    color: #8da8a5;
+}
+
+
+/* Personal details */
+
+body.dark-mode .profile-details-grid {
+    border-color: #2a4441;
+}
+
+body.dark-mode .profile-detail {
+    border-color: #2a4441;
+}
+
+body.dark-mode .profile-detail span {
+    color: #839f9c;
+}
+
+body.dark-mode .profile-detail strong {
+    color: #dcebe8;
+}
+
+
+/* Balance */
+
+body.dark-mode .profile-balance-card {
+    background: #087d75;
+}
+
+body.dark-mode .profile-balance-card span {
+    color: rgba(
+        255,
+        255,
+        255,
+        0.72
+    );
+}
+
+body.dark-mode .profile-balance-card strong {
+    color: #ffffff !important;
+}
+
+
+/* Account details */
+
+body.dark-mode .profile-account-row {
+    border-color: #2a4441;
+}
+
+body.dark-mode .profile-account-row > span {
+    color: #839f9c;
+}
+
+body.dark-mode .profile-account-row > strong {
+    color: #dcebe8;
+}
+
+
+/* Security */
+
+body.dark-mode .profile-security-header h2 {
+    color: #eef8f6;
+}
+
+body.dark-mode .profile-security-header p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .profile-security-icon {
+    background: #1c3d3a;
+}
+
+
+/* Password */
+
+body.dark-mode .profile-password-group label {
+    color: #bfd4d1;
+}
+
+body.dark-mode .profile-password-group input {
+    background: #102323;
+    border-color: #36504d;
+    color: #edf8f6;
+}
+
+body.dark-mode .profile-password-group input::placeholder {
+    color: #718a87;
+}
+
+body.dark-mode .profile-password-group input:focus {
+    background: #132b2a;
+    border-color: #0c9189;
+}
+
+
+/* Messages */
+
+body.dark-mode .profile-password-success {
+    background: #173a34;
+    border-color: #28594e;
+    color: #79d8be;
+}
+
+body.dark-mode .profile-password-error {
+    background: #402525;
+    border-color: #663b3b;
+    color: #ff9292;
+}
+
+
+/* Inline error */
+
+body.dark-mode .profile-inline-error {
+    background: #402525;
+    border-color: #663b3b;
+    color: #ff9292;
+}
+
+
+/* Loading */
+
+body.dark-mode .profile-loading {
+    background: #0f1f1f;
+}
+
+body.dark-mode .profile-loading-card h2 {
+    color: #eef8f6;
+}
+
+body.dark-mode .profile-loading-card p {
+    color: #8fa9a7;
+}
+
+
+/* Error card */
+
+body.dark-mode .profile-error-card {
+    background: #142727;
+    border-color: #2a4542;
+}
+
+body.dark-mode .profile-error-card h2 {
+    color: #eef8f6;
+}
+
+body.dark-mode .profile-error-card p {
+    color: #8fa9a7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-password-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .profile-password-button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .profile-page {
+        padding: 25px 18px 45px;
+    }
+
+    .profile-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-page-header h1 {
+        font-size: 29px;
+    }
+
+    .profile-dashboard-button {
+        width: 100%;
+    }
+
+    .profile-card,
+    .profile-security-card {
+        padding: 23px;
+        border-radius: 17px;
+    }
+
+    .profile-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-password-form {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-password-button {
+        width: 100%;
+    }
+
+    .profile-account-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+        padding: 15px 0;
+    }
+
+    .profile-account-row > strong {
+        text-align: left;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .profile-page-header h1 {
+        font-size: 26px;
+    }
+
+    .profile-card h2,
+    .profile-security-header h2 {
+        font-size: 21px;
+    }
+
+    .profile-balance-card strong {
+        font-size: 27px;
+    }
+
+}
+
+/* =========================================================
+   SMARTBANK SETTINGS PAGE
+========================================================= */
+
+.settings-page {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 36px 38px 60px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.settings-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.settings-label {
+    margin-bottom: 8px;
+    color: #6e8b89;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.settings-header h1 {
+    margin: 0;
+    color: #062d35;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.settings-header p {
+    margin: 8px 0 0;
+    color: #789493;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DASHBOARD BUTTON
+========================================================= */
+
+.settings-dashboard-button {
+    height: 45px;
+    padding: 0 20px;
+
+    border: 1px solid #cfe1df;
+    border-radius: 11px;
+
+    background: #ffffff;
+    color: #07595a;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.settings-dashboard-button:hover {
+    background: #eef8f6;
+    border-color: #a9cfca;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SETTINGS GRID
+========================================================= */
+
+.settings-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.settings-card {
+    min-width: 0;
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8e6;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(
+            18,
+            70,
+            67,
+            0.045
+        );
+}
+
+.settings-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.settings-card-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #e6f6f3;
+    color: #07877f;
+
+    font-size: 20px;
+}
+
+.settings-card-heading h2 {
+    margin: 0;
+
+    color: #073c43;
+
+    font-size: 21px;
+    font-weight: 750;
+}
+
+.settings-card-heading p {
+    margin: 4px 0 0;
+
+    color: #789493;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.settings-divider {
+    height: 1px;
+
+    margin: 23px 0 5px;
+
+    background: #e2ecea;
+}
+
+
+/* =========================================================
+   SETTING ROW
+========================================================= */
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height: 70px;
+
+    border-bottom: 1px solid #e4eceb;
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-info {
+    min-width: 0;
+}
+
+.setting-info strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #153f43;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.setting-info span {
+    display: block;
+
+    color: #789493;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+.settings-toggle {
+    position: relative;
+
+    width: 48px;
+    height: 27px;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #cbd9d7;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.settings-toggle span {
+    position: absolute;
+
+    top: 4px;
+    left: 4px;
+
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 5px
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+
+    transition: 0.2s ease;
+}
+
+.settings-toggle.active {
+    background: #07877f;
+}
+
+.settings-toggle.active span {
+    left: 25px;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.setting-select-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height: 75px;
+
+    border-bottom: 1px solid #e4eceb;
+}
+
+.setting-select-row:last-child {
+    border-bottom: none;
+}
+
+.setting-select-row select {
+    width: 150px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    padding: 0 12px;
+
+    border: 1px solid #d4e3e1;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #fbfdfd;
+    color: #173f42;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.setting-select-row select:focus {
+    border-color: #0c9189;
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.security-status-row {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 68px;
+
+    margin-bottom: 5px;
+}
+
+.security-status-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dff5ec;
+    color: #078c70;
+
+    font-weight: 800;
+}
+
+.security-status-row strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #153f43;
+
+    font-size: 14px;
+}
+
+.security-status-row span {
+    display: block;
+
+    color: #789493;
+
+    font-size: 12px;
+}
+
+.security-active {
+    margin-left: auto;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #e7f8f2;
+    color: #078c70;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.settings-action {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border: none;
+    border-top: 1px solid #e4eceb;
+
+    background: transparent;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.settings-action:hover {
+    background: #f7fbfa;
+}
+
+.settings-action strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #153f43;
+
+    font-size: 13px;
+}
+
+.settings-action span {
+    display: block;
+
+    color: #789493;
+
+    font-size: 11px;
+}
+
+.settings-action .settings-arrow {
+    color: #07877f;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ACCOUNT ACTIONS
+========================================================= */
+
+.settings-account-card {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-top: 24px;
+
+    padding: 27px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8e6;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(
+            18,
+            70,
+            67,
+            0.045
+        );
+}
+
+.settings-account-card h2 {
+    margin: 0;
+
+    color: #073c43;
+
+    font-size: 20px;
+}
+
+.settings-account-card p {
+    margin: 5px 0 0;
+
+    color: #789493;
+
+    font-size: 12px;
+}
+
+.settings-account-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.settings-reset-button,
+.settings-logout-button {
+    height: 42px;
+
+    padding: 0 17px;
+
+    border-radius: 9px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.settings-reset-button {
+    border: 1px solid #d4e3e1;
+
+    background: #ffffff;
+
+    color: #406765;
+}
+
+.settings-reset-button:hover {
+    background: #f3f9f8;
+}
+
+.settings-logout-button {
+    border: 1px solid #f0d0d0;
+
+    background: #fff3f3;
+
+    color: #b54242;
+}
+
+.settings-logout-button:hover {
+    background: #ffe8e8;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .settings-page {
+    background: #0f1f1f;
+}
+
+body.dark-mode .settings-label {
+    color: #86a6a3;
+}
+
+body.dark-mode .settings-header h1 {
+    color: #f0faf8;
+}
+
+body.dark-mode .settings-header p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .settings-dashboard-button {
+    background: #193332;
+    border-color: #35524f;
+    color: #d9eeeb;
+}
+
+body.dark-mode .settings-dashboard-button:hover {
+    background: #234543;
+}
+
+
+/* Cards */
+
+body.dark-mode .settings-card,
+body.dark-mode .settings-account-card {
+    background: #142727;
+
+    border-color: #2a4542;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+}
+
+body.dark-mode .settings-card-icon {
+    background: #1c3d3a;
+    color: #82d8ce;
+}
+
+body.dark-mode .settings-card-heading h2 {
+    color: #edf8f6;
+}
+
+body.dark-mode .settings-card-heading p {
+    color: #8fa9a7;
+}
+
+body.dark-mode .settings-divider {
+    background: #2a4441;
+}
+
+
+/* Rows */
+
+body.dark-mode .setting-row,
+body.dark-mode .setting-select-row {
+    border-color: #2a4441;
+}
+
+body.dark-mode .setting-info strong {
+    color: #dcebe8;
+}
+
+body.dark-mode .setting-info span {
+    color: #839f9c;
+}
+
+
+/* Select */
+
+body.dark-mode .setting-select-row select {
+    background: #102323;
+    border-color: #36504d;
+    color: #dcebe8;
+}
+
+
+/* Security */
+
+body.dark-mode .security-status-icon {
+    background: #173b35;
+    color: #72d9b8;
+}
+
+body.dark-mode .security-status-row strong {
+    color: #dcebe8;
+}
+
+body.dark-mode .security-status-row span {
+    color: #839f9c;
+}
+
+body.dark-mode .security-active {
+    background: #173b35;
+    color: #72d9b8;
+}
+
+
+/* Action */
+
+body.dark-mode .settings-action {
+    border-color: #2a4441;
+}
+
+body.dark-mode .settings-action:hover {
+    background: #193332;
+}
+
+body.dark-mode .settings-action strong {
+    color: #dcebe8;
+}
+
+body.dark-mode .settings-action span {
+    color: #839f9c;
+}
+
+body.dark-mode .settings-action .settings-arrow {
+    color: #66cec3;
+}
+
+
+/* Account */
+
+body.dark-mode .settings-account-card h2 {
+    color: #edf8f6;
+}
+
+body.dark-mode .settings-account-card p {
+    color: #839f9c;
+}
+
+body.dark-mode .settings-reset-button {
+    background: #193332;
+    border-color: #36504d;
+    color: #c5dcda;
+}
+
+body.dark-mode .settings-reset-button:hover {
+    background: #234543;
+}
+
+body.dark-mode .settings-logout-button {
+    background: #402525;
+    border-color: #663b3b;
+    color: #ff9696;
+}
+
+body.dark-mode .settings-logout-button:hover {
+    background: #4b2b2b;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-account-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .settings-account-actions {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .settings-page {
+        padding: 25px 18px 45px;
+    }
+
+    .settings-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .settings-header h1 {
+        font-size: 29px;
+    }
+
+    .settings-dashboard-button {
+        width: 100%;
+    }
+
+    .settings-card,
+    .settings-account-card {
+        padding: 22px;
+        border-radius: 17px;
+    }
+
+    .setting-row,
+    .setting-select-row {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .setting-select-row select {
+        width: 100%;
+    }
+
+    .security-status-row {
+        align-items: flex-start;
+    }
+
+    .security-active {
+        margin-left: 0;
+    }
+
+    .settings-account-actions {
+        flex-direction: column;
+    }
+
+    .settings-reset-button,
+    .settings-logout-button {
+        width: 100%;
+    }
+}
+/* =========================================================
+   SETTINGS SIDEBAR THEME BUTTON
+========================================================= */
+
+.sidebar-theme-button {
+    width: 100%;
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 14px;
+
+    margin-bottom: 8px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.88
+    );
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.sidebar-theme-button:hover {
+    background: rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR THEME BUTTON
+========================================================= */
+
+.app-layout.sidebar-collapsed
+.sidebar-theme-button {
+    justify-content: center;
+
+    padding: 0;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-theme-button span:last-child {
+    display: none;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+========================================================= */
+
+.app-layout.sidebar-collapsed
+.sidebar-link {
+    justify-content: center;
+
+    gap: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-link > span:last-child {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.menu-title {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.security-box {
+    justify-content: center;
+
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.app-layout.sidebar-collapsed
+.security-box > div:last-child {
+    display: none;
+}
+
+
+/* =========================================================
+   DARK MODE SIDEBAR THEME BUTTON
+========================================================= */
+
+body.dark-mode
+.sidebar-theme-button {
+    color: #d7e8e5;
+}
+
+body.dark-mode
+.sidebar-theme-button:hover {
+    background: rgba(
+        255,
+        255,
+        255,
+        0.07
+    );
+}
+
+
+/* =========================================================
+   SETTINGS PAGE INSIDE APP MAIN
+========================================================= */
+
+.settings-page {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .app-layout.sidebar-collapsed
+    .sidebar {
+        width: 75px;
+        min-width: 75px;
+    }
+
+    .app-layout.sidebar-collapsed
+    .app-main {
+        width: calc(
+            100% - 75px
+        );
+
+        margin-left: 75px;
+    }
+
+}
+/* =========================================================
+   SETTINGS PAGE SIDEBAR
+   MATCH MAKE TRANSACTION / PROFILE APPEARANCE
+========================================================= */
+
+.settings-layout .sidebar {
+    background: #ffffff !important;
+    color: #123f40 !important;
+
+    border-right: 1px solid #e5eeee;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SETTINGS SIDEBAR BRAND
+========================================================= */
+
+.settings-layout .sidebar-brand {
+    border-bottom: 1px solid #e5eeee;
+}
+
+.settings-layout .brand-logo {
+    background: #08665f;
+    color: #ffffff;
+}
+
+.settings-layout .brand-text h1 {
+    color: #123f40;
+}
+
+.settings-layout .brand-text span {
+    color: #789493;
+}
+
+
+/* =========================================================
+   COLLAPSE BUTTON
+========================================================= */
+
+.settings-layout
+.sidebar-collapse-button {
+    background: #ffffff;
+
+    border: 1px solid #e5eeee;
+
+    color: #648180;
+
+    box-shadow:
+        0 3px 12px
+        rgba(
+            20,
+            70,
+            68,
+            0.05
+        );
+}
+
+.settings-layout
+.sidebar-collapse-button:hover {
+    background: #f3faf9;
+
+    color: #087f78;
+
+    border-color: #cfe5e2;
+}
+
+
+/* =========================================================
+   MENU TITLE
+========================================================= */
+
+.settings-layout .menu-title {
+    color: #789493;
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+========================================================= */
+
+.settings-layout .sidebar-link {
+    color: #557674;
+}
+
+.settings-layout .sidebar-link:hover {
+    background: #f1f8f7;
+
+    color: #08665f;
+}
+
+.settings-layout .sidebar-link.active {
+    background: #e2f4f2;
+
+    color: #075f5b;
+}
+
+
+/* ACTIVE SIDEBAR ICON */
+
+.settings-layout
+.sidebar-link.active
+.sidebar-icon {
+    color: #07877f;
+}
+
+
+/* NORMAL SIDEBAR ICON */
+
+.settings-layout .sidebar-icon {
+    color: #668482;
+}
+
+
+/* =========================================================
+   SECURITY BOX
+========================================================= */
+
+.settings-layout .security-box {
+    background: #edf8f6;
+
+    border: 1px solid #d9eeeb;
+}
+
+.settings-layout .security-icon {
+    background: #16c2c1;
+
+    color: #ffffff;
+}
+
+.settings-layout .security-box strong {
+    color: #164b4b;
+}
+
+.settings-layout .security-box span {
+    color: #789493;
+}
+
+
+/* =========================================================
+   DARK MODE BUTTON
+========================================================= */
+
+.settings-layout
+.sidebar-theme-button {
+    color: #557674;
+
+    background: transparent;
+}
+
+.settings-layout
+.sidebar-theme-button:hover {
+    background: #f1f8f7;
+
+    color: #08665f;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.settings-layout .sidebar-logout {
+    color: #557674;
+
+    background: #ffffff;
+
+    border: 1px solid #dcebea;
+}
+
+.settings-layout .sidebar-logout:hover {
+    background: #f1f8f7;
+
+    color: #08665f;
+
+    border-color: #c9e3df;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+========================================================= */
+
+.settings-layout.sidebar-collapsed
+.sidebar {
+    background: #ffffff !important;
+}
+
+
+/* =========================================================
+   SETTINGS DARK MODE
+========================================================= */
+
+body.dark-mode
+.settings-layout .sidebar {
+    background: #102827 !important;
+
+    border-right-color: #23413f;
+
+    color: #d9ece9;
+}
+
+body.dark-mode
+.settings-layout .sidebar-brand {
+    border-bottom-color: #23413f;
+}
+
+body.dark-mode
+.settings-layout .brand-text h1 {
+    color: #edfafa;
+}
+
+body.dark-mode
+.settings-layout .brand-text span {
+    color: #8eaaa7;
+}
+
+body.dark-mode
+.settings-layout .menu-title {
+    color: #799592;
+}
+
+body.dark-mode
+.settings-layout .sidebar-link {
+    color: #a8c2bf;
+}
+
+body.dark-mode
+.settings-layout .sidebar-link:hover {
+    background: #193735;
+
+    color: #ffffff;
+}
+
+body.dark-mode
+.settings-layout .sidebar-link.active {
+    background: #18504d;
+
+    color: #ffffff;
+}
+
+body.dark-mode
+.settings-layout .sidebar-icon {
+    color: #8eaaa7;
+}
+
+body.dark-mode
+.settings-layout .sidebar-link.active
+.sidebar-icon {
+    color: #5de0d4;
+}
+
+body.dark-mode
+.settings-layout .security-box {
+    background: #193735;
+
+    border-color: #28514e;
+}
+
+body.dark-mode
+.settings-layout
+.sidebar-theme-button {
+    color: #a8c2bf;
+}
+
+body.dark-mode
+.settings-layout
+.sidebar-theme-button:hover {
+    background: #193735;
+
+    color: #ffffff;
+}
+
+body.dark-mode
+.settings-layout .sidebar-logout {
+    background: transparent;
+
+    border-color: #315350;
+
+    color: #a8c2bf;
+}
+
+body.dark-mode
+.settings-layout .sidebar-logout:hover {
+    background: #193735;
+
+    color: #ffffff;
+}
+/* =========================================================
+   FIX SETTINGS SIDEBAR TO MATCH ALL OTHER PAGES
+========================================================= */
+
+/* Keep Settings sidebar exactly the same size */
+.settings-layout .sidebar {
+    width: 258px;
+    min-width: 258px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FIX SMARTBANK LOGO POSITION
+========================================================= */
+
+.settings-layout .sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    padding: 0 8px !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 56px !important;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FIX COLLAPSE SIDEBAR BUTTON
+========================================================= */
+
+.settings-layout .sidebar-collapse-button {
+    width: calc(100% - 32px) !important;
+
+    height: 44px;
+
+    margin: 0 16px 24px !important;
+
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dce9e8;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #547674;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.settings-layout .sidebar-collapse-button:hover {
+    background: #f2f8f7;
+    border-color: #c5ddda;
+    color: #07595a;
+}
+
+
+/* =========================================================
+   COLLAPSED SETTINGS SIDEBAR
+========================================================= */
+
+.settings-layout.sidebar-collapsed .sidebar {
+    width: 78px;
+    min-width: 78px;
+}
+
+
+.settings-layout.sidebar-collapsed .app-main {
+    width: calc(100% - 78px);
+    margin-left: 78px;
+}
+
+
+/* Logo when collapsed */
+
+.settings-layout.sidebar-collapsed .sidebar-brand {
+    justify-content: center;
+
+    padding: 0 !important;
+
+    margin-bottom: 40px !important;
+}
+
+
+.settings-layout.sidebar-collapsed .brand-text {
+    display: none;
+}
+
+
+.settings-layout.sidebar-collapsed .brand-logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Collapse button when collapsed */
+
+.settings-layout.sidebar-collapsed
+.sidebar-collapse-button {
+    width: 52px !important;
+    height: 44px;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding: 0;
+
+    font-size: 0;
+}
+
+
+.settings-layout.sidebar-collapsed
+.sidebar-collapse-button::after {
+    content: "→";
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   COLLAPSED MENU
+========================================================= */
+
+.settings-layout.sidebar-collapsed
+.menu-title {
+    display: none;
+}
+
+
+.settings-layout.sidebar-collapsed
+.sidebar-link {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.settings-layout.sidebar-collapsed
+.sidebar-link > span:last-child {
+    display: none;
+}
+
+
+.settings-layout.sidebar-collapsed
+.sidebar-icon {
+    margin: 0;
+}
+
+
+/* =========================================================
+   COLLAPSED BOTTOM SECTION
+========================================================= */
+
+.settings-layout.sidebar-collapsed
+.security-box {
+    justify-content: center;
+
+    padding: 10px 0;
+}
+
+
+.settings-layout.sidebar-collapsed
+.security-box > div:last-child {
+    display: none;
+}
+
+
+.settings-layout.sidebar-collapsed
+.sidebar-theme-button,
+.settings-layout.sidebar-collapsed
+.sidebar-logout {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.settings-layout.sidebar-collapsed
+.sidebar-theme-button > span:last-child,
+.settings-layout.sidebar-collapsed
+.sidebar-logout > span:last-child {
+    display: none;
+}
+
+
+/* =========================================================
+   SETTINGS SIDEBAR DARK MODE
+========================================================= */
+
+body.dark-mode
+.settings-layout .sidebar-collapse-button {
+    background: #173332;
+    border-color: #31504e;
+    color: #a8c4c1;
+}
+
+
+body.dark-mode
+.settings-layout .sidebar-collapse-button:hover {
+    background: #1d3d3b;
+    border-color: #41635f;
+    color: #e5f4f2;
+}
+
+
+/* =========================================================
+   SETTINGS DARK MODE SIDEBAR
+========================================================= */
+
+body.dark-mode
+.settings-layout .sidebar {
+    background: #092b2b;
+}
+
+
+body.dark-mode
+.settings-layout .sidebar-link {
+    color: #9dbab7;
+}
+
+
+body.dark-mode
+.settings-layout .sidebar-link:hover {
+    background: #173d3b;
+    color: #e7f5f3;
+}
+
+
+body.dark-mode
+.settings-layout .sidebar-link.active {
+    background: #194542;
+    color: #70d5cd;
+}
+
+
+/* =========================================================
+   SETTINGS RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .settings-layout .sidebar {
+        width: 75px;
+        min-width: 75px;
+        padding: 25px 10px;
+    }
+
+    .settings-layout .sidebar-brand {
+        justify-content: center;
+        padding: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+    .settings-layout .brand-text,
+    .settings-layout .menu-title,
+    .settings-layout .sidebar-link > span:last-child,
+    .settings-layout .security-box > div:last-child,
+    .settings-layout .sidebar-theme-button > span:last-child,
+    .settings-layout .sidebar-logout > span:last-child {
+        display: none;
+    }
+
+    .settings-layout .sidebar-collapse-button {
+        width: 48px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0;
+        font-size: 0;
+    }
+
+    .settings-layout .sidebar-collapse-button::after {
+        content: "→";
+        font-size: 18px;
+    }
+}
+/* =====================================================
+   COMMON LAYOUT
+   COLLAPSIBLE SIDEBAR
+   DARK MODE
+===================================================== */
+
+/* =====================================================
+   SIDEBAR COLLAPSE
+===================================================== */
+
+.app-layout.sidebar-collapsed .sidebar {
+    width: 78px;
+    min-width: 78px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.app-layout.sidebar-collapsed .app-main {
+    width: calc(100% - 78px);
+    margin-left: 78px;
+}
+
+/* =====================================================
+   COLLAPSE BUTTON
+===================================================== */
+
+/* =====================================================
+   COLLAPSE SIDEBAR BUTTON
+   ===================================================== */
+
+.sidebar-collapse-button {
+    width: calc(100% - 36px);
+    height: 42px;
+
+    margin: 0 18px 24px;
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 1px solid #dce9e7;
+    border-radius: 10px;
+
+    background: #f7fbfa;
+    color: #557674;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-collapse-button:hover {
+    background: #eef8f6;
+    border-color: #c4dfdb;
+    color: #087e77;
+}
+
+.sidebar-collapse-button:active {
+    transform: scale(0.98);
+}
+
+
+/* Arrow */
+
+.sidebar-collapse-button > span:first-child {
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+
+/* Text */
+
+.collapse-button-text {
+    display: block;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   COLLAPSED SIDEBAR
+   ===================================================== */
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button {
+    width: 42px;
+    height: 42px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+
+    border-radius: 10px;
+
+    justify-content: center;
+}
+
+.app-layout.sidebar-collapsed
+.collapse-button-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button > span:first-child {
+    font-size: 19px;
+}
+
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+body.dark-mode
+.sidebar-collapse-button {
+    background: #132e2c;
+    border-color: #294b48;
+    color: #9dbab7;
+}
+
+body.dark-mode
+.sidebar-collapse-button:hover {
+    background: #193a37;
+    border-color: #3a625e;
+    color: #72d8ce;
+}
+
+
+/* =====================================================
+   SMALL SCREEN
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    .sidebar-collapse-button {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+}
+
+.sidebar-collapse-button:hover {
+    background: #eaf6f4;
+    border-color: #c7dfdc;
+    color: #087e77;
+}
+
+.sidebar-collapse-button > span:first-child {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.collapse-button-text {
+    white-space: nowrap;
+}
+
+/* =====================================================
+   COLLAPSED SIDEBAR ELEMENTS
+===================================================== */
+
+.app-layout.sidebar-collapsed
+.sidebar-brand {
+    justify-content: center;
+}
+
+.app-layout.sidebar-collapsed
+.brand-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button {
+    justify-content: center;
+    padding: 11px 8px;
+}
+
+.app-layout.sidebar-collapsed
+.collapse-button-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.menu-title {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-link {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-link-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-icon {
+    margin: 0;
+}
+
+.app-layout.sidebar-collapsed
+.security-box {
+    justify-content: center;
+    padding: 12px 8px;
+}
+
+.app-layout.sidebar-collapsed
+.security-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-theme-button {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-logout {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* =====================================================
+   DARK MODE - GLOBAL
+===================================================== */
+
+body.dark-mode {
+    background: #081817;
+    color: #e7f4f2;
+}
+
+body.dark-mode .app-layout {
+    background: #081817;
+}
+
+body.dark-mode .app-main {
+    background: #081817;
+}
+
+body.dark-mode .page-content {
+    background: #081817;
+}
+
+/* =====================================================
+   DARK MODE - SIDEBAR
+===================================================== */
+
+body.dark-mode .sidebar {
+    background: #0d2423;
+    border-right-color: #1b3c3a;
+}
+
+body.dark-mode .sidebar-brand {
+    border-bottom-color: #1b3c3a;
+}
+
+body.dark-mode .brand-text h1 {
+    color: #edfafa;
+}
+
+body.dark-mode .brand-text span {
+    color: #83a9a6;
+}
+
+body.dark-mode .menu-title {
+    color: #6f9290;
+}
+
+body.dark-mode .sidebar-link {
+    color: #a6c1bf;
+}
+
+body.dark-mode .sidebar-link:hover {
+    background: #153432;
+    color: #dff7f4;
+}
+
+body.dark-mode .sidebar-link.active {
+    background: #16423f;
+    color: #72d8ce;
+}
+
+body.dark-mode .sidebar-collapse-button {
+    background: #122d2c;
+    border-color: #244744;
+    color: #a9c6c3;
+}
+
+body.dark-mode .sidebar-collapse-button:hover {
+    background: #173936;
+    border-color: #35615d;
+    color: #72d8ce;
+}
+
+body.dark-mode .security-box {
+    background: #122f2d;
+    border-color: #244a47;
+}
+
+body.dark-mode .security-text strong {
+    color: #dff4f1;
+}
+
+body.dark-mode .security-text span {
+    color: #79aaa5;
+}
+
+body.dark-mode .sidebar-theme-button,
+body.dark-mode .sidebar-logout {
+    color: #a7c1bf;
+}
+
+body.dark-mode .sidebar-theme-button:hover,
+body.dark-mode .sidebar-logout:hover {
+    background: #153432;
+    color: #e0f7f4;
+}
+
+/* =====================================================
+   DARK MODE - HEADER
+===================================================== */
+
+body.dark-mode .app-header {
+    background: #0d2423;
+    border-bottom-color: #1c3d3b;
+}
+
+body.dark-mode .header-label {
+    color: #70aaa5;
+}
+
+body.dark-mode .header-left h2 {
+    color: #e9f7f5;
+}
+
+body.dark-mode .header-user-info strong {
+    color: #e7f4f2;
+}
+
+body.dark-mode .header-user-info span {
+    color: #7ea39f;
+}
+
+body.dark-mode .notification-button {
+    background: #122f2d;
+    border-color: #244a47;
+    color: #b9d8d4;
+}
+
+body.dark-mode .notification-button:hover {
+    background: #183a37;
+}
+
+/* =====================================================
+   DARK MODE - COMMON CARDS
+===================================================== */
+
+body.dark-mode .settings-card,
+body.dark-mode .settings-account-card,
+body.dark-mode .transaction-form-card,
+body.dark-mode .ai-protection-card,
+body.dark-mode .recent-transactions-card,
+body.dark-mode .ai-security-card,
+body.dark-mode .summary-card {
+    background: #102827;
+    border-color: #1f4542;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* =====================================================
+   DARK MODE - SETTINGS
+===================================================== */
+
+body.dark-mode .settings-header h1,
+body.dark-mode .settings-card h2,
+body.dark-mode .settings-account-card h2 {
+    color: #eaf8f6;
+}
+
+body.dark-mode .settings-header p,
+body.dark-mode .settings-card-heading p,
+body.dark-mode .settings-account-card p {
+    color: #86a8a5;
+}
+
+body.dark-mode .settings-label {
+    color: #72aaa5;
+}
+
+body.dark-mode .settings-divider {
+    border-color: #244542;
+}
+
+body.dark-mode .setting-info strong {
+    color: #dff3f0;
+}
+
+body.dark-mode .setting-info span {
+    color: #829f9c;
+}
+
+body.dark-mode .setting-select-row select {
+    background: #0c211f;
+    border-color: #2a504d;
+    color: #e4f5f2;
+}
+
+body.dark-mode .settings-dashboard-button {
+    background: #102827;
+    border-color: #2a504d;
+    color: #9fc1bd;
+}
+
+body.dark-mode .settings-dashboard-button:hover {
+    background: #163634;
+}
+
+body.dark-mode .settings-action {
+    background: #102827;
+    border-color: #264a47;
+    color: #dcefed;
+}
+
+body.dark-mode .settings-action:hover {
+    background: #153431;
+}
+
+body.dark-mode .settings-action span {
+    color: #83a4a1;
+}
+
+body.dark-mode .settings-account-card {
+    background: #102827;
+}
+
+/* =====================================================
+   DARK MODE - FORM CONTROLS
+===================================================== */
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #0c211f;
+    border-color: #2a504d;
+    color: #e4f5f2;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #648582;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+    background: #102927;
+    border-color: #49aaa0;
+}
+
+/* =====================================================
+   DARK MODE - TRANSACTIONS
+===================================================== */
+
+body.dark-mode .transactions-page,
+body.dark-mode .make-transaction-page,
+body.dark-mode .profile-page {
+    background: #081817;
+}
+
+body.dark-mode .transaction-form-description,
+body.dark-mode .ai-card-description,
+body.dark-mode .ai-risk-item span,
+body.dark-mode .ai-reason p {
+    color: #84a4a1;
+}
+
+body.dark-mode .available-balance {
+    background: #0d2523;
+    border-color: #244a47;
+}
+
+body.dark-mode .available-balance span {
+    color: #7f9e9b;
+}
+
+body.dark-mode .available-balance strong {
+    color: #dff5f2;
+}
+
+/* =====================================================
+   DARK MODE - SCROLLBAR
+===================================================== */
+
+body.dark-mode ::-webkit-scrollbar {
+    width: 9px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #081817;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #28514d;
+    border-radius: 10px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #396b66;
+}
+
+/* =====================================================
+   RESPONSIVE COLLAPSED SIDEBAR
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .app-layout.sidebar-collapsed
+    .sidebar {
+        width: 78px;
+        min-width: 78px;
+    }
+
+    .app-layout.sidebar-collapsed
+    .app-main {
+        width: calc(100% - 78px);
+        margin-left: 78px;
+    }
+
+}
+
+/* =====================================================
+   COLLAPSE SIDEBAR BUTTON
+   ===================================================== */
+
+.sidebar-collapse-button {
+    width: calc(100% - 36px);
+    height: 42px;
+
+    margin: 0 18px 24px;
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 1px solid #dce9e7;
+    border-radius: 10px;
+
+    background: #f7fbfa;
+    color: #557674;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-collapse-button:hover {
+    background: #eef8f6;
+    border-color: #c4dfdb;
+    color: #087e77;
+}
+
+.sidebar-collapse-button:active {
+    transform: scale(0.98);
+}
+
+.sidebar-collapse-button > span:first-child {
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.collapse-button-text {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button {
+    width: 42px;
+    height: 42px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+
+    border-radius: 10px;
+
+    justify-content: center;
+}
+
+.app-layout.sidebar-collapsed
+.collapse-button-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button > span:first-child {
+    font-size: 19px;
+}
+
+body.dark-mode
+.sidebar-collapse-button {
+    background: #132e2c;
+    border-color: #294b48;
+    color: #9dbab7;
+}
+
+body.dark-mode
+.sidebar-collapse-button:hover {
+    background: #193a37;
+    border-color: #3a625e;
+    color: #72d8ce;
+}
+
+@media (max-width: 800px) {
+    .sidebar-collapse-button {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+/* =====================================================
+   PAGE TITLES ARE NOW SHOWN IN COMMON TOP HEADER
+   ===================================================== */
+
+/* Make the common page title more prominent */
+
+.app-header .header-left h2 {
+    margin: 4px 0 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+/* Settings - hide duplicate large page heading */
+
+.settings-header h1 {
+    display: none;
+}
+
+/* Make Transaction - hide duplicate page heading */
+
+.make-transaction-header h1 {
+    display: none;
+}
+
+/* Transactions - hide duplicate page heading */
+
+.transactions-header h1 {
+    display: none;
+}
+
+/* Profile - hide duplicate page heading */
+
+.profile-header h1 {
+    display: none;
+}
+
+/* Dashboard's own header is already hidden by its CSS */
+/* =====================================================
+   REMOVE DUPLICATE PAGE HEADINGS
+   ===================================================== */
+
+/* TRANSACTIONS */
+
+.transactions-page .transactions-header h1 {
+    display: none !important;
+}
+/* PROFILE */
+
+.profile-page .profile-header h1 {
+    display: none !important;
+}
+/* =====================================================
+   COMMON TOP PAGE TITLE
+   ===================================================== */
+
+.app-header .header-left {
+    display: flex;
+    align-items: center;
+}
+
+.app-header .header-left h2 {
+    margin: 0;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.4px;
+}
+/* =====================================================
+   REMOVE DUPLICATE PAGE TITLES
+   ===================================================== */
+
+/* TRANSACTIONS PAGE
+   Keep the title in the top common header.
+   Remove the large duplicate title inside the page.
+*/
+
+.transactions-page h1 {
+    display: none !important;
+}
+
+
+/* PROFILE PAGE
+   Keep the title in the top common header.
+   Remove the large duplicate title inside the page.
+*/
+
+.profile-page h1 {
+    display: none !important;
+}
+/* =====================================================
+   MAIN PAGE TITLES
+   ===================================================== */
+
+.app-header .header-left h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 36px;
+    font-weight: 700;
+
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+/* =====================================================
+   SMARTBANK SIDEBAR - FINAL UI
+   ===================================================== */
+
+
+/* =====================================================
+   SMARTBANK LOGO
+   ===================================================== */
+
+/* =========================================================
+   FINFORTRESS BRAND LOGO
+   ========================================================= */
+
+.brand-logo {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        #18c7c9,
+        #0fa8ad
+    );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(24, 199, 201, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.brand-logo:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 26px rgba(24, 199, 201, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.brand-logo svg {
+    width: 34px;
+    height: 34px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   FINFORTRESS BRAND TEXT
+   ========================================================= */
+
+.brand-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+}
+
+.brand-text h1 {
+    margin: 0;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+
+    color: #ffffff;
+
+    line-height: 1.15;
+}
+
+.brand-text span {
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #8dd9d7;
+
+    line-height: 1;
+}
+
+.smartbank-logo {
+    width: 34px;
+    height: 34px;
+
+    display: block;
+}
+
+
+/* =====================================================
+   SMARTBANK BRAND TEXT
+   ===================================================== */
+
+.brand-text h1 {
+    font-size: 19px;
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+}
+
+.brand-text span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   SIDEBAR MENU TITLES
+   ===================================================== */
+
+.sidebar .menu-title {
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   SIDEBAR NAVIGATION
+   ===================================================== */
+
+.sidebar .sidebar-link {
+    min-height: 48px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    letter-spacing: -0.1px;
+}
+
+.sidebar .sidebar-icon {
+    width: 24px;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   COLLAPSE BUTTON
+   ARROW ONLY
+   ===================================================== */
+
+.sidebar-collapse-button {
+    width: 42px;
+    height: 42px;
+
+    margin: 0 auto 24px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-collapse-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+
+    border-color: rgba(255, 255, 255, 0.30);
+
+    transform: scale(1.04);
+}
+
+.sidebar-collapse-button:active {
+    transform: scale(0.96);
+}
+
+
+/* Arrow */
+
+.collapse-arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 27px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   AI PROTECTION
+   ===================================================== */
+
+.sidebar .security-text strong {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sidebar .security-text span {
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   DARK MODE BUTTON
+   ===================================================== */
+
+.sidebar .sidebar-theme-button {
+    min-height: 48px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   LOGOUT
+   ===================================================== */
+
+.sidebar .sidebar-logout {
+    min-height: 48px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   COLLAPSED SIDEBAR
+   ===================================================== */
+
+.app-layout.sidebar-collapsed
+.brand-logo {
+    width: 48px;
+    height: 48px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-layout.sidebar-collapsed
+.smartbank-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button {
+    width: 42px;
+    height: 42px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+body.dark-mode
+.sidebar-collapse-button {
+    background: rgba(255, 255, 255, 0.06);
+
+    border-color: rgba(255, 255, 255, 0.14);
+
+    color: #ffffff;
+}
+
+body.dark-mode
+.sidebar-collapse-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    border-color: rgba(255, 255, 255, 0.25);
+}
+/* =========================================================
+   FINAL SMARTBANK SIDEBAR COLLAPSE BUTTON
+   ========================================================= */
+
+/*
+   The sidebar is fixed, so the collapse button is positioned
+   relative to the sidebar itself.
+*/
+
+.sidebar {
+    position: fixed;
+}
+
+
+/* =========================================================
+   COLLAPSE BUTTON - EXPANDED SIDEBAR
+   ========================================================= */
+
+.sidebar-collapse-button {
+    position: absolute;
+
+    /*
+       Vertical position:
+       This places the button approximately level with
+       the SmartBank logo area.
+    */
+    top: 78px;
+
+    /*
+       Move the button slightly outside the right edge
+       of the sidebar.
+    */
+    right: -17px;
+
+    width: 34px;
+    height: 34px;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d7e6e4;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #087e77;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 2000;
+
+    box-shadow:
+        0 3px 10px rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+   ========================================================= */
+
+.sidebar-collapse-button:hover {
+    background: #eef8f6;
+
+    border-color: #b9d9d5;
+
+    color: #056c66;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 5px 14px rgba(
+            0,
+            0,
+            0,
+            0.14
+        );
+}
+
+
+/* =========================================================
+   BUTTON CLICK
+   ========================================================= */
+
+.sidebar-collapse-button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   ARROW
+   ========================================================= */
+
+.sidebar-collapse-button > span:first-child {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: inherit;
+}
+
+
+/*
+   Hide the "Collapse Sidebar" / "Expand Sidebar" text
+   because we only want the small arrow button.
+*/
+
+.sidebar-collapse-button .collapse-button-text {
+    display: none;
+}
+
+
+/* =========================================================
+   EXPANDED SIDEBAR ARROW
+   ========================================================= */
+
+.app-layout:not(.sidebar-collapsed)
+.sidebar-collapse-button > span:first-child {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+   ========================================================= */
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button {
+    position: absolute;
+
+    top: 78px;
+
+    right: -17px;
+
+    width: 34px;
+    height: 34px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+
+/*
+   Make sure the collapsed sidebar button does not
+   inherit the old centered-button rules.
+*/
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button > span:first-child {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR WIDTH
+   ========================================================= */
+
+.app-layout.sidebar-collapsed .sidebar {
+    width: 78px;
+
+    min-width: 78px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT WHEN SIDEBAR IS COLLAPSED
+   ========================================================= */
+
+.app-layout.sidebar-collapsed .app-main {
+    width: calc(100% - 78px);
+
+    margin-left: 78px;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR MENU
+   ========================================================= */
+
+.app-layout.sidebar-collapsed .sidebar-brand {
+    justify-content: center;
+}
+
+.app-layout.sidebar-collapsed .brand-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed .menu-title {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed .sidebar-link {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-layout.sidebar-collapsed .sidebar-link-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed .sidebar-icon {
+    margin: 0;
+}
+
+
+/* =========================================================
+   COLLAPSED AI PROTECTION
+   ========================================================= */
+
+.app-layout.sidebar-collapsed .security-box {
+    justify-content: center;
+
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.app-layout.sidebar-collapsed .security-text {
+    display: none;
+}
+
+
+/* =========================================================
+   COLLAPSED DARK MODE BUTTON
+   ========================================================= */
+
+.app-layout.sidebar-collapsed
+.sidebar-theme-button {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-theme-button .sidebar-link-text {
+    display: none;
+}
+
+
+/* =========================================================
+   COLLAPSED LOGOUT
+   ========================================================= */
+
+.app-layout.sidebar-collapsed
+.sidebar-logout {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-logout .sidebar-link-text {
+    display: none;
+}
+
+
+/* =========================================================
+   DARK MODE - COLLAPSE BUTTON
+   ========================================================= */
+
+body.dark-mode
+.sidebar-collapse-button {
+    background: #173332;
+
+    border-color: #315350;
+
+    color: #a8c4c1;
+
+    box-shadow:
+        0 3px 10px rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+}
+
+
+body.dark-mode
+.sidebar-collapse-button:hover {
+    background: #204440;
+
+    border-color: #47736e;
+
+    color: #72d8ce;
+
+    box-shadow:
+        0 5px 14px rgba(
+            0,
+            0,
+            0,
+            0.32
+        );
+}
+
+
+/* =========================================================
+   DARK MODE - SIDEBAR
+   ========================================================= */
+
+body.dark-mode .sidebar {
+    background:
+        linear-gradient(
+            180deg,
+            #092f2d 0%,
+            #082725 100%
+        );
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .sidebar-collapse-button {
+        top: 78px;
+
+        right: -15px;
+
+        width: 34px;
+        height: 34px;
+    }
+
+    .app-layout.sidebar-collapsed
+    .sidebar-collapse-button {
+        top: 78px;
+
+        right: -15px;
+
+        width: 34px;
+        height: 34px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar-collapse-button {
+        width: 32px;
+        height: 32px;
+
+        right: -14px;
+    }
+
+    .app-layout.sidebar-collapsed
+    .sidebar-collapse-button {
+        width: 32px;
+        height: 32px;
+
+        right: -14px;
+    }
+
+}
+
+
+/* =========================================================
+   FINAL PAGE HEADER
+   ========================================================= */
+
+.app-header .header-left h2 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   REMOVE DUPLICATE PAGE TITLES
+   ========================================================= */
+
+.settings-header h1 {
+    display: none;
+}
+
+.make-transaction-header h1 {
+    display: none;
+}
+
+.transactions-header h1 {
+    display: none;
+}
+
+.profile-header h1 {
+    display: none;
+}
+
+.transactions-page h1 {
+    display: none !important;
+}
+
+.profile-page h1 {
+    display: none !important;
+}
+
+
+/* =========================================================
+   FINAL BODY DARK MODE
+   ========================================================= */
+
+body.dark-mode {
+    background: #081817;
+
+    color: #e7f4f2;
+}
+
+body.dark-mode .app-layout {
+    background: #081817;
+}
+
+body.dark-mode .app-main {
+    background: #081817;
+}
+
+body.dark-mode .page-content {
+    background: #081817;
+}
+
+
+/* =========================================================
+   FINAL SCROLLBAR
+   ========================================================= */
+
+body.dark-mode::-webkit-scrollbar {
+    width: 9px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+    background: #081817;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: #28514d;
+
+    border-radius: 10px;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: #396b66;
+}
+/* =========================================================
+   SMARTBANK LOGO + COLLAPSE BUTTON
+   FINAL POSITION
+========================================================= */
+
+/* Make the brand area the positioning container */
+.sidebar-brand {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 8px;
+
+    margin-bottom: 56px;
+}
+
+
+/* =========================================================
+   COLLAPSE BUTTON
+   BESIDE SMARTBANK
+========================================================= */
+
+.sidebar-collapse-button {
+    position: absolute;
+
+    /*
+       Place the button beside the SmartBank branding.
+       Sidebar width = 258px.
+       Button sits close to the right side.
+    */
+    top: 45px;
+    right: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cfe1df;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #087e77;
+
+    font-family: "Inter", sans-serif;
+
+    cursor: pointer;
+
+    z-index: 2000;
+
+    box-shadow:
+        0 3px 10px rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.sidebar-collapse-button:hover {
+    background: #eef8f6;
+
+    border-color: #a9d2cd;
+
+    color: #056c66;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 5px 14px rgba(
+            0,
+            0,
+            0,
+            0.16
+        );
+}
+
+
+/* =========================================================
+   CLICK
+========================================================= */
+
+.sidebar-collapse-button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.sidebar-collapse-button > span:first-child {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: inherit;
+}
+
+
+/* Hide text */
+.sidebar-collapse-button .collapse-button-text {
+    display: none;
+}
+
+
+/* =========================================================
+   EXPANDED SIDEBAR
+========================================================= */
+
+.app-layout:not(.sidebar-collapsed)
+.sidebar-collapse-button > span:first-child {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+========================================================= */
+
+.app-layout.sidebar-collapsed .sidebar {
+    width: 78px;
+    min-width: 78px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* Main area moves left */
+.app-layout.sidebar-collapsed .app-main {
+    width: calc(100% - 78px);
+
+    margin-left: 78px;
+}
+
+
+/* Center logo */
+.app-layout.sidebar-collapsed .sidebar-brand {
+    position: relative;
+
+    justify-content: center;
+
+    padding: 0;
+
+    margin-bottom: 56px;
+}
+
+
+/* Hide SmartBank text */
+.app-layout.sidebar-collapsed .brand-text {
+    display: none;
+}
+
+
+/* Smaller logo */
+.app-layout.sidebar-collapsed .brand-logo {
+    width: 48px;
+    height: 48px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   COLLAPSE BUTTON WHEN SIDEBAR IS COLLAPSED
+========================================================= */
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button {
+    position: absolute;
+
+    /*
+       Keep button beside the small logo
+    */
+    top: 13px;
+    right: 7px;
+
+    width: 32px;
+    height: 32px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   COLLAPSED MENU
+========================================================= */
+
+.app-layout.sidebar-collapsed .menu-title {
+    display: none;
+}
+
+
+.app-layout.sidebar-collapsed .sidebar-link {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.app-layout.sidebar-collapsed .sidebar-link-text {
+    display: none;
+}
+
+
+.app-layout.sidebar-collapsed .sidebar-icon {
+    margin: 0;
+}
+
+
+/* =========================================================
+   COLLAPSED SECURITY BOX
+========================================================= */
+
+.app-layout.sidebar-collapsed .security-box {
+    justify-content: center;
+
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+
+.app-layout.sidebar-collapsed .security-text {
+    display: none;
+}
+
+
+/* =========================================================
+   COLLAPSED DARK MODE
+========================================================= */
+
+.app-layout.sidebar-collapsed
+.sidebar-theme-button {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.app-layout.sidebar-collapsed
+.sidebar-logout {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.app-layout.sidebar-collapsed
+.sidebar-theme-button .sidebar-link-text,
+.app-layout.sidebar-collapsed
+.sidebar-logout .sidebar-link-text {
+    display: none;
+}
+
+
+/* =========================================================
+   DARK MODE BUTTON
+========================================================= */
+
+body.dark-mode .sidebar-collapse-button {
+    background: #173332;
+
+    border-color: #315350;
+
+    color: #a8c4c1;
+
+    box-shadow:
+        0 3px 10px rgba(
+            0,
+            0,
+            0,
+            0.30
+        );
+}
+
+
+body.dark-mode .sidebar-collapse-button:hover {
+    background: #214541;
+
+    border-color: #47736e;
+
+    color: #72d8ce;
+}
+
+
+/* =========================================================
+   DARK MODE SIDEBAR
+========================================================= */
+
+body.dark-mode .sidebar {
+    background:
+        linear-gradient(
+            180deg,
+            #092f2d 0%,
+            #082725 100%
+        );
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .sidebar-collapse-button {
+        top: 8px;
+        right: -2px;
+
+        width: 32px;
+        height: 32px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar-collapse-button {
+        top: 8px;
+        right: -3px;
+
+        width: 30px;
+        height: 30px;
+    }
+
+    .app-layout.sidebar-collapsed
+    .sidebar-collapse-button {
+        top: 7px;
+        right: -2px;
+
+        width: 30px;
+        height: 30px;
+    }
+
+}
+/* =====================================================
+   SETTINGS SWITCH
+   ===================================================== */
+
+.settings-switch {
+    width: 48px;
+    height: 28px;
+
+    padding: 3px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #d7e2e1;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.settings-switch span {
+    width: 22px;
+    height: 22px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.25s ease;
+}
+
+.settings-switch.on {
+    background: #079b94;
+}
+
+.settings-switch.on span {
+    transform: translateX(20px);
+}
+
+
+/* Dark mode */
+
+body.dark-mode .settings-switch {
+    background: #526664;
+}
+
+body.dark-mode .settings-switch.on {
+    background: #079b94;
+}
+
+
+/* Make the settings switch clickable */
+
+.settings-switch:focus {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            7,
+            155,
+            148,
+            0.18
+        );
+}
+/* =========================================================
+   HIGH-RISK TRANSACTION SECURITY NOTIFICATION
+========================================================= */
+
+.security-modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        rgba(
+            3,
+            20,
+            19,
+            0.68
+        );
+
+    backdrop-filter:
+        blur(5px);
+
+}
+
+
+.security-modal {
+
+    width: min(
+        520px,
+        100%
+    );
+
+    box-sizing: border-box;
+
+    padding: 32px;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e8;
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+    text-align: center;
+
+    animation:
+        securityModalAppear
+        0.25s ease-out;
+
+}
+
+
+@keyframes securityModalAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(16px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.security-modal-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin:
+        0 auto 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0e0;
+
+    color: #d67a18;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+}
+
+
+.security-modal-label {
+
+    margin-bottom: 8px;
+
+    color: #a0712d;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.security-modal h2 {
+
+    margin:
+        0 0 12px;
+
+    color: #173f3f;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+}
+
+
+.security-modal-message {
+
+    margin:
+        0 auto 22px;
+
+    max-width: 430px;
+
+    color: #688180;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.security-modal-amount {
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+
+    background: #f5faf9;
+
+    border: 1px solid #dcecea;
+
+}
+
+
+.security-modal-amount span {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #77918f;
+
+    font-size: 12px;
+
+}
+
+
+.security-modal-amount strong {
+
+    display: block;
+
+    color: #123f40;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   RISK INFORMATION
+========================================================= */
+
+.security-modal-risk {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.security-modal-risk > div {
+
+    padding: 14px;
+
+    border-radius: 13px;
+
+    background: #fff5f3;
+
+    border: 1px solid #f2d8d3;
+
+}
+
+
+.security-modal-risk span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8c7774;
+
+    font-size: 11px;
+
+}
+
+
+.security-modal-risk strong {
+
+    color: #d14949;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   REASON
+========================================================= */
+
+.security-modal-reason {
+
+    padding: 15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 13px;
+
+    text-align: left;
+
+    background: #f8fbfb;
+
+    border: 1px solid #e2eeee;
+
+}
+
+
+.security-modal-reason strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #214b4a;
+
+    font-size: 13px;
+
+}
+
+
+.security-modal-reason p {
+
+    margin: 0;
+
+    color: #718887;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.security-modal-question {
+
+    margin:
+        0 0 15px;
+
+    color: #183f3f;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.security-modal-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.2fr;
+
+    gap: 12px;
+
+}
+
+
+.security-block-button,
+.security-allow-button {
+
+    min-height: 50px;
+
+    padding:
+        0 16px;
+
+    border-radius: 11px;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.security-block-button {
+
+    border:
+        1px solid #e8caca;
+
+    background: #fff3f3;
+
+    color: #c23e3e;
+
+}
+
+
+.security-block-button:hover {
+
+    background: #ffe6e6;
+
+    border-color: #dda7a7;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.security-allow-button {
+
+    border: none;
+
+    background: #07877f;
+
+    color: #ffffff;
+
+}
+
+
+.security-allow-button:hover {
+
+    background: #06736d;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.security-block-button:disabled,
+.security-allow-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.security-modal-warning {
+
+    margin:
+        15px 0 0;
+
+    color: #8c7774;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode
+.security-modal {
+
+    background: #102827;
+
+    border-color: #294b48;
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+
+}
+
+
+body.dark-mode
+.security-modal h2 {
+
+    color: #edf8f6;
+
+}
+
+
+body.dark-mode
+.security-modal-message {
+
+    color: #8fa9a7;
+
+}
+
+
+body.dark-mode
+.security-modal-amount {
+
+    background: #193332;
+
+    border-color: #2d4d4a;
+
+}
+
+
+body.dark-mode
+.security-modal-amount span {
+
+    color: #8fa9a7;
+
+}
+
+
+body.dark-mode
+.security-modal-amount strong {
+
+    color: #edf8f6;
+
+}
+
+
+body.dark-mode
+.security-modal-risk > div {
+
+    background: #352727;
+
+    border-color: #543b39;
+
+}
+
+
+body.dark-mode
+.security-modal-reason {
+
+    background: #142727;
+
+    border-color: #2d4845;
+
+}
+
+
+body.dark-mode
+.security-modal-reason strong {
+
+    color: #dcefeb;
+
+}
+
+
+body.dark-mode
+.security-modal-reason p {
+
+    color: #8fa9a7;
+
+}
+
+
+body.dark-mode
+.security-modal-question {
+
+    color: #dcefeb;
+
+}
+
+
+body.dark-mode
+.security-block-button {
+
+    background: #352727;
+
+    border-color: #654141;
+
+    color: #ff9898;
+
+}
+
+
+body.dark-mode
+.security-block-button:hover {
+
+    background: #432b2b;
+
+}
+
+
+body.dark-mode
+.security-allow-button {
+
+    background: #07877f;
+
+}
+
+
+body.dark-mode
+.security-allow-button:hover {
+
+    background: #09978e;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .security-modal {
+
+        padding: 24px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .security-modal h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    .security-modal-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .security-modal-risk {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+/* =========================================================
+   DASHBOARD - BLOCKED TRANSACTION RED HIGHLIGHT
+========================================================= */
+
+/* Blocked transaction row */
+.dashboard-page .blocked-row {
+    background: #fff1f1 !important;
+    box-shadow: inset 4px 0 0 #d94c4c;
+}
+
+/* Blocked row hover */
+.dashboard-page .blocked-row:hover {
+    background: #ffe7e7 !important;
+}
+
+/* Transaction name */
+.dashboard-page .blocked-row .transaction-info strong {
+    color: #b52f2f !important;
+}
+
+/* Transaction subtitle/date */
+.dashboard-page .blocked-row .transaction-info span {
+    color: #c47777 !important;
+}
+
+/* Transaction amount */
+.dashboard-page .blocked-row .transaction-amount {
+    color: #d43f3f !important;
+}
+
+/* Blocked status */
+.dashboard-page .blocked-row .status-badge {
+    background: #ffe0e0 !important;
+    color: #b83232 !important;
+    border: 1px solid #efb8b8;
+}
+
+/* Blocked icon */
+.dashboard-page .blocked-row .transaction-icon {
+    background: #ffdede !important;
+    color: #cf4545 !important;
+    border: 1px solid #efb8b8;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .dashboard-page .blocked-row {
+    background: #351d1d !important;
+    box-shadow: inset 4px 0 0 #e15b5b;
+}
+
+body.dark-mode .dashboard-page .blocked-row:hover {
+    background: #402121 !important;
+}
+
+body.dark-mode .dashboard-page .blocked-row .transaction-info strong {
+    color: #ff9b9b !important;
+}
+
+body.dark-mode .dashboard-page .blocked-row .transaction-info span {
+    color: #c78282 !important;
+}
+
+body.dark-mode .dashboard-page .blocked-row .transaction-amount {
+    color: #ff8585 !important;
+}
+
+body.dark-mode .dashboard-page .blocked-row .status-badge {
+    background: #4a2424 !important;
+    color: #ff9999 !important;
+    border-color: #754444;
+}
+
+body.dark-mode .dashboard-page .blocked-row .transaction-icon {
+    background: #4a2424 !important;
+    color: #ff8585 !important;
+    border-color: #754444;
+}
+/* =========================================================
+   DASHBOARD - BLOCKED TRANSACTION
+   ========================================================= */
+
+/* Blocked transaction row */
+.dashboard-page .transaction-row.blocked {
+    background: #fff0f0 !important;
+    border-left: 5px solid #dc4b4b !important;
+    border-top: 1px solid #f2caca !important;
+    border-bottom: 1px solid #f2caca !important;
+}
+
+/* Hover */
+.dashboard-page .transaction-row.blocked:hover {
+    background: #ffe5e5 !important;
+}
+
+/* Transaction title */
+.dashboard-page .transaction-row.blocked
+.transaction-details strong {
+    color: #b52f2f !important;
+}
+
+/* Transaction type and date */
+.dashboard-page .transaction-row.blocked
+.transaction-details span {
+    color: #bd7777 !important;
+}
+
+/* Amount */
+.dashboard-page .transaction-row.blocked
+.transaction-amount {
+    color: #d93636 !important;
+}
+
+/* Status */
+.dashboard-page .transaction-row.blocked
+.transaction-status {
+    background: #ffdede !important;
+    color: #b72f2f !important;
+    border: 1px solid #efb7b7 !important;
+}
+
+/* Icon */
+.dashboard-page .transaction-row.blocked
+.transaction-icon {
+    background: #ffdede !important;
+    color: #d04444 !important;
+    border: 1px solid #efb7b7 !important;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode .dashboard-page
+.transaction-row.blocked {
+    background: #351d1d !important;
+    border-left: 5px solid #e15b5b !important;
+    border-top-color: #613636 !important;
+    border-bottom-color: #613636 !important;
+}
+
+body.dark-mode .dashboard-page
+.transaction-row.blocked:hover {
+    background: #402121 !important;
+}
+
+body.dark-mode .dashboard-page
+.transaction-row.blocked
+.transaction-details strong {
+    color: #ff9999 !important;
+}
+
+body.dark-mode .dashboard-page
+.transaction-row.blocked
+.transaction-details span {
+    color: #c78181 !important;
+}
+
+body.dark-mode .dashboard-page
+.transaction-row.blocked
+.transaction-amount {
+    color: #ff7777 !important;
+}
+
+body.dark-mode .dashboard-page
+.transaction-row.blocked
+.transaction-status {
+    background: #4a2424 !important;
+    color: #ff9999 !important;
+    border-color: #754444 !important;
+}
+
+body.dark-mode .dashboard-page
+.transaction-row.blocked
+.transaction-icon {
+    background: #4a2424 !important;
+    color: #ff8585 !important;
+    border-color: #754444 !important;
+}
+/* =========================================================
+   PROFILE PAGE - FIXED
+========================================================= */
+
+.profile-page {
+    min-height: calc(100vh - 80px);
+
+    padding: 34px 40px 55px;
+
+    background: #0f1f1f;
+
+    color: #e8f4f2;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.profile-page-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+
+.profile-page-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #4bd5c5;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+
+.profile-page-header h1 {
+    margin: 0;
+
+    color: #f1faf8;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+.profile-page-header p {
+    margin: 8px 0 0;
+
+    color: #8fa9a7;
+
+    font-size: 13px;
+}
+
+
+.profile-dashboard-button {
+    height: 42px;
+
+    padding: 0 17px;
+
+    border: 1px solid #34514e;
+
+    border-radius: 10px;
+
+    background: #193332;
+
+    color: #d9efeb;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.profile-dashboard-button:hover {
+    background: #234543;
+
+    border-color: #4c6c67;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.profile-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.profile-card {
+    padding: 27px;
+
+    border: 1px solid #2a4542;
+
+    border-radius: 18px;
+
+    background: #142727;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+.profile-card-label {
+    margin-bottom: 22px;
+
+    color: #80a49f;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   USER HEADER
+========================================================= */
+
+.profile-user-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.profile-avatar {
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #1d4542;
+
+    color: #82e0d4;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.profile-user-header h3 {
+    margin: 0 0 5px;
+
+    color: #edf8f6;
+
+    font-size: 20px;
+}
+
+
+.profile-user-header p {
+    margin: 0;
+
+    color: #82a19e;
+
+    font-size: 11px;
+
+    text-transform: capitalize;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.profile-divider {
+    height: 1px;
+
+    margin: 25px 0;
+
+    background: #2a4441;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.profile-details-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    border-top: 1px solid #2a4441;
+
+    border-left: 1px solid #2a4441;
+}
+
+
+.profile-detail {
+    min-width: 0;
+
+    padding: 16px;
+
+    border-right: 1px solid #2a4441;
+
+    border-bottom: 1px solid #2a4441;
+}
+
+
+.profile-detail span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #839f9c;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+.profile-detail strong {
+    display: block;
+
+    color: #dcebe8;
+
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   BALANCE
+========================================================= */
+
+.profile-balance-card {
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078f86,
+            #076d68
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.14);
+}
+
+
+.profile-balance-card span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.profile-balance-card strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 29px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ACCOUNT DETAILS
+========================================================= */
+
+.profile-account-details {
+    width: 100%;
+}
+
+
+.profile-account-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #2a4441;
+}
+
+
+.profile-account-row:last-child {
+    border-bottom: none;
+}
+
+
+.profile-account-row > span {
+    color: #839f9c;
+
+    font-size: 10px;
+}
+
+
+.profile-account-row > strong {
+    color: #dcebe8;
+
+    font-size: 11px;
+
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+.profile-active-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #58d6b8 !important;
+}
+
+
+.profile-status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #42d5b5;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(66, 213, 181, 0.1);
+}
+
+
+/* =========================================================
+   NO ACCOUNT
+========================================================= */
+
+.profile-no-account {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border: 1px dashed #365451;
+
+    border-radius: 13px;
+}
+
+
+.profile-no-account-icon {
+    width: 45px;
+    height: 45px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #402525;
+
+    color: #ff9999;
+
+    font-weight: 800;
+}
+
+
+.profile-no-account h3 {
+    margin: 0 0 7px;
+
+    color: #e9f5f2;
+
+    font-size: 15px;
+}
+
+
+.profile-no-account p {
+    max-width: 380px;
+
+    margin: 0 auto;
+
+    color: #819f9b;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.profile-inline-error {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #663b3b;
+
+    border-radius: 11px;
+
+    background: #402525;
+
+    color: #ff9292;
+}
+
+
+.profile-inline-error > span {
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #653535;
+
+    font-weight: 800;
+}
+
+
+.profile-inline-error div {
+    flex: 1;
+}
+
+
+.profile-inline-error strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #ffb0b0;
+
+    font-size: 10px;
+}
+
+
+.profile-inline-error p {
+    margin: 0;
+
+    color: #d78b8b;
+
+    font-size: 9px;
+}
+
+
+.profile-inline-error button {
+    height: 34px;
+
+    padding: 0 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #087f78;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.profile-security-card {
+    margin-top: 22px;
+
+    padding: 24px 27px;
+
+    border: 1px solid #2a4542;
+
+    border-radius: 18px;
+
+    background: #142727;
+}
+
+
+.profile-security-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.profile-security-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #1c3d3a;
+
+    color: #58d6c4;
+
+    font-weight: 800;
+}
+
+
+.profile-security-header h2 {
+    margin: 0 0 4px;
+
+    color: #eef8f6;
+
+    font-size: 16px;
+}
+
+
+.profile-security-header p {
+    margin: 0;
+
+    color: #8fa9a7;
+
+    font-size: 10px;
+}
+
+
+.profile-security-items {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #2a4441;
+}
+
+
+.profile-security-items > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #9bb5b2;
+
+    font-size: 10px;
+}
+
+
+.security-check {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #193f3a;
+
+    color: #54d5c0;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.profile-loading {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0f1f1f;
+}
+
+
+.profile-loading-card {
+    text-align: center;
+}
+
+
+.profile-loading-spinner {
+    width: 35px;
+    height: 35px;
+
+    margin: 0 auto 17px;
+
+    border: 3px solid #294744;
+
+    border-top-color: #24b9a8;
+
+    border-radius: 50%;
+
+    animation:
+        profileSpin 0.8s linear infinite;
+}
+
+
+.profile-loading-card h2 {
+    margin: 0 0 6px;
+
+    color: #eef8f6;
+
+    font-size: 17px;
+}
+
+
+.profile-loading-card p {
+    margin: 0;
+
+    color: #829f9b;
+
+    font-size: 10px;
+}
+
+
+@keyframes profileSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .profile-page {
+        padding:
+            25px 18px 45px;
+    }
+
+
+    .profile-page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .profile-page-header h1 {
+        font-size: 29px;
+    }
+
+
+    .profile-dashboard-button {
+        width: 100%;
+    }
+
+
+    .profile-card,
+    .profile-security-card {
+        padding: 22px;
+
+        border-radius: 16px;
+    }
+
+
+    .profile-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-account-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+
+    .profile-account-row > strong {
+        text-align: left;
+    }
+
+
+    .profile-security-items {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .profile-inline-error {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .profile-inline-error button {
+        margin-left: 40px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .profile-page-header h1 {
+        font-size: 26px;
+    }
+
+
+    .profile-user-header h3 {
+        font-size: 17px;
+    }
+
+
+    .profile-balance-card strong {
+        font-size: 25px;
+    }
+
+}
+/* =========================================================
+   PROFILE - PERSONAL INFORMATION + BANK ACCOUNT
+   Larger Typography
+========================================================= */
+
+
+/* =========================================================
+   CARD HEADINGS
+========================================================= */
+
+.profile-card-label {
+    font-size: 13px !important;
+    letter-spacing: 1.8px !important;
+    font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   USER NAME / AVATAR
+========================================================= */
+
+.profile-user-header {
+    gap: 18px !important;
+}
+
+
+.profile-avatar {
+    width: 70px !important;
+    height: 70px !important;
+
+    font-size: 30px !important;
+
+    border-radius: 18px !important;
+}
+
+
+.profile-user-header h3 {
+    font-size: 26px !important;
+    font-weight: 800 !important;
+
+    margin-bottom: 6px !important;
+}
+
+
+.profile-user-header p {
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   PERSONAL INFORMATION FIELDS
+========================================================= */
+
+.profile-detail {
+    padding: 20px !important;
+}
+
+
+.profile-detail span {
+    font-size: 12px !important;
+
+    margin-bottom: 9px !important;
+}
+
+
+.profile-detail strong {
+    font-size: 15px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   BANK BALANCE
+========================================================= */
+
+.profile-balance-card {
+    padding: 26px !important;
+
+    min-height: 105px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.profile-balance-card span {
+    font-size: 12px !important;
+
+    letter-spacing: 1.2px !important;
+
+    margin-bottom: 7px !important;
+}
+
+
+.profile-balance-card strong {
+    font-size: 36px !important;
+
+    line-height: 1.15 !important;
+
+    font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   BANK ACCOUNT DETAILS
+========================================================= */
+
+.profile-account-row {
+    padding: 20px 0 !important;
+}
+
+
+.profile-account-row > span {
+    font-size: 13px !important;
+}
+
+
+.profile-account-row > strong {
+    font-size: 15px !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   ACTIVE STATUS
+========================================================= */
+
+.profile-active-status {
+    font-size: 15px !important;
+
+    font-weight: 700 !important;
+
+    gap: 8px !important;
+}
+
+
+.profile-status-dot {
+    width: 9px !important;
+    height: 9px !important;
+}
+
+
+/* =========================================================
+   ACCOUNT NUMBER
+========================================================= */
+
+.profile-account-row strong {
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .profile-card-label {
+        font-size: 12px !important;
+    }
+
+    .profile-user-header h3 {
+        font-size: 22px !important;
+    }
+
+    .profile-user-header p {
+        font-size: 13px !important;
+    }
+
+    .profile-detail span {
+        font-size: 11px !important;
+    }
+
+    .profile-detail strong {
+        font-size: 14px !important;
+    }
+
+    .profile-balance-card strong {
+        font-size: 31px !important;
+    }
+
+    .profile-account-row > span {
+        font-size: 12px !important;
+    }
+
+    .profile-account-row > strong {
+        font-size: 14px !important;
+    }
+
+}
+/* =========================================================
+   FIX PERSONAL INFORMATION EMAIL WRAPPING
+========================================================= */
+
+.profile-details-grid {
+    grid-template-columns: 1fr 1.2fr !important;
+}
+
+
+.profile-detail {
+    min-width: 0 !important;
+}
+
+
+.profile-detail strong {
+    white-space: nowrap !important;
+    overflow: visible !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+}
+/* =========================================================
+   PROFILE PAGE - LIGHT + DARK MODE
+========================================================= */
+
+
+/* =========================================================
+   DEFAULT / LIGHT MODE
+========================================================= */
+
+.profile-page {
+    min-height: calc(100vh - 80px);
+
+    padding: 34px 40px 55px;
+
+    background: #f6f9f9;
+
+    color: #102b2b;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.profile-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+
+.profile-page-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #168f87;
+
+    font-size: 13px !important;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+}
+
+
+.profile-page-header h1 {
+    margin: 0;
+
+    color: #102b2b;
+
+    font-size: 42px !important;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+
+.profile-page-header p {
+    margin: 8px 0 0;
+
+    color: #65817f;
+
+    font-size: 16px !important;
+
+    line-height: 1.6;
+}
+
+
+/* Dashboard button */
+
+.profile-dashboard-button {
+    height: 48px;
+
+    padding: 0 22px;
+
+    border: 1px solid #cbdedd;
+
+    border-radius: 11px;
+
+    background: #edf5f4;
+
+    color: #244746;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.profile-dashboard-button:hover {
+    background: #e1efed;
+
+    border-color: #9fc5c1;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PROFILE CARDS
+========================================================= */
+
+.profile-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 22px;
+}
+
+
+.profile-card {
+    padding: 27px;
+
+    border: 1px solid #d5e3e1;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px
+        rgba(22, 63, 61, 0.07);
+}
+
+
+.profile-card-label {
+    margin-bottom: 25px;
+
+    color: #6b9290;
+
+    font-size: 13px !important;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   USER HEADER
+========================================================= */
+
+.profile-user-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.profile-avatar {
+    width: 70px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #dff3f0;
+
+    color: #16a69a;
+
+    font-size: 30px !important;
+
+    font-weight: 800;
+}
+
+
+.profile-user-header h3 {
+    margin: 0 0 6px;
+
+    color: #122f2e;
+
+    font-size: 26px !important;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+}
+
+
+.profile-user-header p {
+    margin: 0;
+
+    color: #66817f;
+
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.profile-divider {
+    height: 1px;
+
+    margin: 25px 0;
+
+    background: #dce8e6;
+}
+
+
+/* =========================================================
+   PERSONAL INFORMATION
+========================================================= */
+
+.profile-details-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1.4fr;
+
+    border-top: 1px solid #d6e3e1;
+
+    border-left: 1px solid #d6e3e1;
+}
+
+
+.profile-detail {
+    min-width: 0;
+
+    padding: 20px;
+
+    border-right: 1px solid #d6e3e1;
+
+    border-bottom: 1px solid #d6e3e1;
+}
+
+
+.profile-detail span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #6b9290;
+
+    font-size: 12px !important;
+
+    font-weight: 600;
+}
+
+
+.profile-detail strong {
+    display: block;
+
+    color: #173634;
+
+    font-size: 15px !important;
+
+    line-height: 1.5;
+
+    white-space: nowrap;
+
+    word-break: keep-all;
+
+    overflow-wrap: normal;
+}
+
+
+/* =========================================================
+   BANK BALANCE
+========================================================= */
+
+.profile-balance-card {
+    min-height: 105px;
+
+    padding: 26px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b9187,
+            #078078
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(9, 126, 117, 0.16);
+}
+
+
+.profile-balance-card span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    font-size: 12px !important;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.profile-balance-card strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 36px !important;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ACCOUNT DETAILS
+========================================================= */
+
+.profile-account-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #d6e3e1;
+}
+
+
+.profile-account-row:last-child {
+    border-bottom: none;
+}
+
+
+.profile-account-row > span {
+    color: #688582;
+
+    font-size: 13px !important;
+}
+
+
+.profile-account-row > strong {
+    color: #173634;
+
+    font-size: 15px !important;
+
+    font-weight: 700;
+
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+.profile-active-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #0cae92 !important;
+
+    font-size: 15px !important;
+}
+
+
+.profile-status-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #2bc8aa;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(43, 200, 170, 0.12);
+}
+
+
+/* =========================================================
+   SECURITY CARD - LIGHT
+========================================================= */
+
+.profile-security-card {
+    margin-top: 22px;
+
+    padding: 28px;
+
+    border: 1px solid #d5e3e1;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px
+        rgba(22, 63, 61, 0.07);
+}
+
+
+.profile-security-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 14px;
+
+    background: #dff3f0;
+
+    color: #16a69a;
+
+    font-size: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.profile-security-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+}
+
+
+.profile-security-header h2 {
+    margin: 0 0 6px;
+
+    color: #173634;
+
+    font-size: 21px;
+}
+
+
+.profile-security-header p {
+    margin: 0;
+
+    color: #718c89;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.profile-security-items {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    margin-top: 23px;
+
+    padding-top: 21px;
+
+    border-top: 1px solid #dce8e6;
+}
+
+
+.profile-security-items > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #65817f;
+
+    font-size: 13px;
+}
+
+
+.security-check {
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dff3f0;
+
+    color: #16a69a;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ERROR - LIGHT MODE
+========================================================= */
+
+.profile-inline-error {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #efcaca;
+
+    border-radius: 11px;
+
+    background: #fff1f1;
+
+    color: #b43b3b;
+}
+
+
+.profile-inline-error strong {
+    font-size: 13px;
+}
+
+
+.profile-inline-error p {
+    margin: 2px 0 0;
+
+    color: #a76666;
+
+    font-size: 12px;
+}
+
+
+.profile-inline-error button {
+    height: 40px;
+
+    padding: 0 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #098b82;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LOADING - LIGHT
+========================================================= */
+
+.profile-loading {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f6f9f9;
+}
+
+
+.profile-loading-spinner {
+    width: 35px;
+    height: 35px;
+
+    margin: 0 auto 17px;
+
+    border: 3px solid #d7e5e3;
+
+    border-top-color: #18a99c;
+
+    border-radius: 50%;
+
+    animation:
+        profileSpin 0.8s linear infinite;
+}
+
+
+.profile-loading-card h2 {
+    color: #173634;
+}
+
+
+.profile-loading-card p {
+    color: #718c89;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .profile-page {
+    background: #0f1f1f;
+
+    color: #e8f4f2;
+}
+
+
+body.dark-mode .profile-page-label {
+    color: #4bd5c5;
+}
+
+
+body.dark-mode .profile-page-header h1 {
+    color: #f1faf8;
+}
+
+
+body.dark-mode .profile-page-header p {
+    color: #8fa9a7;
+}
+
+
+body.dark-mode .profile-dashboard-button {
+    border-color: #34514e;
+
+    background: #193332;
+
+    color: #d9efeb;
+}
+
+
+body.dark-mode .profile-dashboard-button:hover {
+    background: #234543;
+
+    border-color: #4c6c67;
+}
+
+
+body.dark-mode .profile-card {
+    border-color: #2a4542;
+
+    background: #142727;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+body.dark-mode .profile-card-label {
+    color: #80a49f;
+}
+
+
+body.dark-mode .profile-avatar {
+    background: #1d4542;
+
+    color: #82e0d4;
+}
+
+
+body.dark-mode .profile-user-header h3 {
+    color: #edf8f6;
+}
+
+
+body.dark-mode .profile-user-header p {
+    color: #82a19e;
+}
+
+
+body.dark-mode .profile-divider {
+    background: #2a4441;
+}
+
+
+body.dark-mode .profile-details-grid {
+    border-top-color: #2a4441;
+
+    border-left-color: #2a4441;
+}
+
+
+body.dark-mode .profile-detail {
+    border-right-color: #2a4441;
+
+    border-bottom-color: #2a4441;
+}
+
+
+body.dark-mode .profile-detail span {
+    color: #839f9c;
+}
+
+
+body.dark-mode .profile-detail strong {
+    color: #dcebe8;
+}
+
+
+body.dark-mode .profile-account-row {
+    border-bottom-color: #2a4441;
+}
+
+
+body.dark-mode .profile-account-row > span {
+    color: #839f9c;
+}
+
+
+body.dark-mode .profile-account-row > strong {
+    color: #dcebe8;
+}
+
+
+body.dark-mode .profile-security-card {
+    border-color: #2a4542;
+
+    background: #142727;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+body.dark-mode .profile-security-icon {
+    background: #1c3d3a;
+
+    color: #58d6c4;
+}
+
+
+body.dark-mode .profile-security-header h2 {
+    color: #eef8f6;
+}
+
+
+body.dark-mode .profile-security-header p {
+    color: #8fa9a7;
+}
+
+
+body.dark-mode .profile-security-items {
+    border-top-color: #2a4441;
+}
+
+
+body.dark-mode .profile-security-items > div {
+    color: #9bb5b2;
+}
+
+
+body.dark-mode .security-check {
+    background: #193f3a;
+
+    color: #54d5c0;
+}
+
+
+body.dark-mode .profile-inline-error {
+    border-color: #663b3b;
+
+    background: #402525;
+
+    color: #ff9292;
+}
+
+
+body.dark-mode .profile-inline-error p {
+    color: #d78b8b;
+}
+
+
+body.dark-mode .profile-loading {
+    background: #0f1f1f;
+}
+
+
+body.dark-mode .profile-loading-card h2 {
+    color: #eef8f6;
+}
+
+
+body.dark-mode .profile-loading-card p {
+    color: #829f9b;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .profile-page {
+        padding: 28px 18px 45px;
+    }
+
+
+    .profile-page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .profile-page-header h1 {
+        font-size: 34px !important;
+    }
+
+
+    .profile-page-header p {
+        font-size: 14px !important;
+    }
+
+
+    .profile-dashboard-button {
+        width: 100%;
+    }
+
+
+    .profile-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-user-header h3 {
+        font-size: 22px !important;
+    }
+
+
+    .profile-detail span {
+        font-size: 11px !important;
+    }
+
+
+    .profile-detail strong {
+        font-size: 14px !important;
+    }
+
+
+    .profile-balance-card strong {
+        font-size: 31px !important;
+    }
+
+
+    .profile-account-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+
+    .profile-account-row > strong {
+        text-align: left;
+    }
+
+
+    .profile-security-header h2 {
+        font-size: 19px;
+    }
+
+
+    .profile-security-header p {
+        font-size: 12px;
+    }
+
+
+    .profile-security-items {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .profile-page-header h1 {
+        font-size: 30px !important;
+    }
+
+
+    .profile-user-header h3 {
+        font-size: 20px !important;
+    }
+
+
+    .profile-balance-card strong {
+        font-size: 27px !important;
+    }
+
+}
+/* =========================================================
+   FINFORTRESS BRANDING
+========================================================= */
+
+.brand-text h1 {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.brand-text span {
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   AUTHENTICATION PAGES
+========================================================= */
+
+.auth-page {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(420px, 48%)
+        minmax(520px, 52%);
+
+    background:
+        #071918;
+
+    color:
+        #ffffff;
+
+}
+
+
+.auth-left {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding:
+        42px 58px 28px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #073b38 0%,
+            #075f59 52%,
+            #063d3a 100%
+        );
+
+}
+
+
+.auth-left::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    right: -180px;
+
+    top: -160px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+
+}
+
+
+.auth-left::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    left: -280px;
+
+    bottom: -300px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+
+}
+
+
+.auth-left-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 600px;
+
+}
+
+
+.auth-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 58px;
+
+}
+
+
+.auth-brand-logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        #ffffff;
+
+    color:
+        #07877f;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.15);
+
+}
+
+
+.auth-brand h1 {
+
+    margin: 0;
+
+    color:
+        #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+
+.auth-brand span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        #7be3db;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.auth-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 13px;
+
+    margin-bottom: 23px;
+
+    border:
+        1px solid
+        rgba(111,236,226,0.28);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color:
+        #77e5dd;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+}
+
+
+.auth-pill span {
+
+    color:
+        #5be1d6;
+
+}
+
+
+.auth-hero-title {
+
+    max-width: 600px;
+
+    margin: 0;
+
+    color:
+        #ffffff;
+
+    font-size: clamp(
+        42px,
+        5vw,
+        68px
+    );
+
+    line-height: 1.02;
+
+    letter-spacing:
+        -2.5px;
+
+    font-weight:
+        800;
+
+}
+
+
+.auth-hero-title span {
+
+    display: block;
+
+    color:
+        #67ddd4;
+
+}
+
+
+.auth-hero-description {
+
+    max-width: 560px;
+
+    margin:
+        25px 0 34px;
+
+    color:
+        #b3d8d4;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+.auth-bank-card {
+
+    width: 365px;
+
+    min-height: 205px;
+
+    padding: 25px;
+
+    margin:
+        20px auto 30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.16);
+
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #147d76,
+            #0b5d58
+        );
+
+    box-shadow:
+        0 22px 50px
+        rgba(0,0,0,0.18);
+
+}
+
+
+.auth-card-top {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+}
+
+
+.auth-card-top small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color:
+        #9ce9e3;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.auth-card-top strong {
+
+    display: block;
+
+    color:
+        #ffffff;
+
+    font-size: 16px;
+
+}
+
+
+.auth-card-symbol {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    color:
+        #ffffff;
+
+    font-weight: 800;
+
+}
+
+
+.auth-card-chip {
+
+    width: 32px;
+
+    height: 24px;
+
+    margin-top: 29px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e5e0a5,
+            #c9c578
+        );
+
+}
+
+
+.auth-card-number {
+
+    margin-top: 14px;
+
+    color:
+        #ffffff;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.auth-card-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 25px;
+
+    color:
+        #91ddd7;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+}
+
+
+.auth-feature-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+.auth-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.auth-feature > span {
+
+    width: 29px;
+
+    height: 29px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(69,222,210,0.12);
+
+    color:
+        #5ce0d5;
+
+    font-weight: 800;
+
+}
+
+
+.auth-feature strong {
+
+    display: block;
+
+    color:
+        #ffffff;
+
+    font-size: 12px;
+
+}
+
+
+.auth-feature small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        #91bdb9;
+
+    font-size: 10px;
+
+}
+
+
+.auth-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color:
+        #6ea7a2;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   AUTH RIGHT
+========================================================= */
+
+.auth-right {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        50px 70px;
+
+    background:
+        #081b1a;
+
+}
+
+
+.auth-form-container {
+
+    width: 100%;
+
+    max-width: 470px;
+
+}
+
+
+.auth-form-heading {
+
+    margin-bottom: 26px;
+
+}
+
+
+.auth-form-heading > span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        #51d9d0;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.auth-form-heading h2 {
+
+    margin: 0;
+
+    color:
+        #ffffff;
+
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    letter-spacing:
+        -1px;
+
+}
+
+
+.auth-form-heading p {
+
+    margin:
+        10px 0 0;
+
+    color:
+        #7fa9a5;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ERROR */
+
+.auth-error {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    padding:
+        13px 15px;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid
+        #683939;
+
+    border-radius: 10px;
+
+    background:
+        #321f20;
+
+    color:
+        #ff9696;
+
+}
+
+
+.auth-error strong {
+
+    font-size: 11px;
+
+}
+
+
+.auth-error span {
+
+    font-size: 10px;
+
+}
+
+
+/* SUCCESS */
+
+.auth-success {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    padding:
+        13px 15px;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid
+        #276c61;
+
+    border-radius: 10px;
+
+    background:
+        #123b37;
+
+    color:
+        #70e1d5;
+
+}
+
+
+.auth-success strong {
+
+    font-size: 11px;
+
+}
+
+
+.auth-success span {
+
+    font-size: 10px;
+
+}
+
+
+/* FORM */
+
+.auth-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+
+}
+
+
+.auth-field label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        #d3e8e5;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.auth-input-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 50px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid
+        #244744;
+
+    border-radius: 10px;
+
+    background:
+        #102725;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.auth-input-wrapper:focus-within {
+
+    border-color:
+        #159d94;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(21,157,148,0.1);
+
+}
+
+
+.auth-input-wrapper > span {
+
+    color:
+        #739995;
+
+    font-size: 15px;
+
+}
+
+
+.auth-input-wrapper input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background:
+        transparent;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 13px;
+
+}
+
+
+.auth-input-wrapper input::placeholder {
+
+    color:
+        #638582;
+
+}
+
+
+.auth-submit-button {
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        #07988f;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.auth-submit-button:hover {
+
+    background:
+        #0aaba1;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(7,152,143,0.2);
+
+}
+
+
+.auth-submit-button:disabled {
+
+    opacity:
+        0.65;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
+}
+
+
+/* SWITCH */
+
+.auth-switch {
+
+    margin-top: 19px;
+
+    text-align: center;
+
+    color:
+        #718f8c;
+
+    font-size: 11px;
+
+}
+
+
+.auth-switch a {
+
+    margin-left: 5px;
+
+    color:
+        #51d9d0;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.auth-switch a:hover {
+
+    text-decoration:
+        underline;
+
+}
+
+
+/* SECURITY */
+
+.auth-security-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        12px 14px;
+
+    margin-top: 17px;
+
+    border:
+        1px solid
+        #244744;
+
+    border-radius: 10px;
+
+    background:
+        #102725;
+
+}
+
+
+.auth-security-box > span {
+
+    width: 27px;
+
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        #174d48;
+
+    color:
+        #56dfd4;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.auth-security-box strong {
+
+    display: block;
+
+    color:
+        #dcefed;
+
+    font-size: 10px;
+
+}
+
+
+.auth-security-box small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        #739995;
+
+    font-size: 9px;
+
+}
+
+
+.auth-legal {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    color:
+        #547572;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+
+}
+
+
+/* PASSWORD */
+
+.auth-password-strength {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: -10px;
+
+}
+
+
+.auth-password-strength > div {
+
+    width: 95px;
+
+    height: 3px;
+
+    border-radius: 5px;
+
+    background:
+        #36c7a7;
+
+}
+
+
+.auth-password-strength span {
+
+    color:
+        #49cbaa;
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================================
+   LIGHT MODE AUTH
+========================================================= */
+
+body:not(.dark-mode) .auth-page {
+
+    background:
+        #f4f9f8;
+
+}
+
+
+body:not(.dark-mode) .auth-right {
+
+    background:
+        #ffffff;
+
+}
+
+
+body:not(.dark-mode) .auth-form-heading h2 {
+
+    color:
+        #123c3b;
+
+}
+
+
+body:not(.dark-mode) .auth-form-heading p {
+
+    color:
+        #75918e;
+
+}
+
+
+body:not(.dark-mode) .auth-field label {
+
+    color:
+        #365a57;
+
+}
+
+
+body:not(.dark-mode) .auth-input-wrapper {
+
+    background:
+        #f7fbfa;
+
+    border-color:
+        #d6e5e2;
+
+}
+
+
+body:not(.dark-mode) .auth-input-wrapper input {
+
+    color:
+        #173f3d;
+
+}
+
+
+body:not(.dark-mode) .auth-input-wrapper input::placeholder {
+
+    color:
+        #91aaa7;
+
+}
+
+
+body:not(.dark-mode) .auth-security-box {
+
+    background:
+        #f5faf9;
+
+    border-color:
+        #dce9e7;
+
+}
+
+
+body:not(.dark-mode) .auth-security-box strong {
+
+    color:
+        #234b48;
+
+}
+
+
+body:not(.dark-mode) .auth-security-box small {
+
+    color:
+        #789391;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .auth-page {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .auth-left {
+
+        min-height:
+            auto;
+
+        padding:
+            40px;
+
+    }
+
+
+    .auth-right {
+
+        min-height:
+            auto;
+
+        padding:
+            50px 30px;
+
+    }
+
+
+    .auth-bank-card {
+
+        margin-left:
+            0;
+
+        margin-right:
+            0;
+
+    }
+
+
+    .auth-footer {
+
+        margin-top:
+            35px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .auth-left {
+
+        padding:
+            30px 24px;
+
+    }
+
+
+    .auth-right {
+
+        padding:
+            40px 22px;
+
+    }
+
+
+    .auth-hero-title {
+
+        font-size:
+            42px;
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .auth-bank-card {
+
+        width:
+            100%;
+
+    }
+
+
+    .auth-footer {
+
+        flex-direction:
+            column;
+
+        gap:
+            7px;
+
+    }
+
+
+    .auth-form-heading h2 {
+
+        font-size:
+            28px;
+
+    }
+
+}
+/* =========================================================
+   FINFORTRESS BRANDING
+========================================================= */
+
+.brand-logo {
+    background: linear-gradient(
+        135deg,
+        #15c4c5,
+        #0aa69f
+    );
+
+    color: #ffffff;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 16px
+        rgba(21, 196, 197, 0.25);
+}
+
+
+/* =========================================================
+   FINFORTRESS BRAND TEXT
+========================================================= */
+
+.brand-text h1 {
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.brand-text span {
+    color: rgba(
+        255,
+        255,
+        255,
+        0.72
+    );
+}
+
+
+/* =========================================================
+   FINFORTRESS HEADER
+========================================================= */
+
+.header-label {
+    color: #087e77;
+    font-weight: 800;
+}
+
+.header-left h2 {
+    color: #062f36;
+}
+
+
+/* =========================================================
+   FINFORTRESS ACTIVE SIDEBAR
+========================================================= */
+
+.sidebar-link.active {
+    background: linear-gradient(
+        135deg,
+        #119d98,
+        #087e77
+    );
+
+    box-shadow:
+        0 5px 14px
+        rgba(8, 126, 119, 0.18);
+}
+
+
+/* =========================================================
+   FINFORTRESS AI PROTECTION
+========================================================= */
+
+.security-icon {
+    background: #16c2c1;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .brand-logo {
+    background: linear-gradient(
+        135deg,
+        #19c8c4,
+        #087e77
+    );
+}
+
+body.dark-mode .header-label {
+    color: #65c8c0;
+}
+
+body.dark-mode .header-left h2 {
+    color: #e5f5f3;
+}
+
+
+/* =========================================================
+   FINFORTRESS COLLAPSED SIDEBAR
+========================================================= */
+
+.app-layout.sidebar-collapsed .sidebar {
+    width: 78px;
+    min-width: 78px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.app-layout.sidebar-collapsed .app-main {
+    width: calc(100% - 78px);
+    margin-left: 78px;
+}
+
+.app-layout.sidebar-collapsed .sidebar-brand {
+    justify-content: center;
+    padding: 0;
+}
+
+.app-layout.sidebar-collapsed .brand-text,
+.app-layout.sidebar-collapsed .sidebar-link-text,
+.app-layout.sidebar-collapsed .menu-title,
+.app-layout.sidebar-collapsed .security-text,
+.app-layout.sidebar-collapsed .collapse-button-text {
+    display: none;
+}
+
+.app-layout.sidebar-collapsed .sidebar-link {
+    justify-content: center;
+    padding: 0;
+}
+
+.app-layout.sidebar-collapsed .security-box {
+    justify-content: center;
+    padding: 10px;
+}
+
+.app-layout.sidebar-collapsed .sidebar-theme-button,
+.app-layout.sidebar-collapsed .sidebar-logout {
+    justify-content: center;
+}
+
+.app-layout.sidebar-collapsed
+.sidebar-collapse-button {
+    width: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}

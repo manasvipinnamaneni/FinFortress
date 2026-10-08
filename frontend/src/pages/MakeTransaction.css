@@ -1,0 +1,1710 @@
+/* =====================================================
+   MAKE TRANSACTION PAGE
+===================================================== */
+
+.make-transaction-page {
+    min-height: 100vh;
+    background: #f3f9f8;
+    padding: 38px 44px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.make-transaction-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.make-transaction-header h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: #073c3d;
+}
+
+.make-transaction-header p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #72908f;
+}
+
+
+/* =====================================================
+   DASHBOARD BUTTON
+===================================================== */
+
+.back-dashboard-button {
+    padding: 13px 23px;
+    border: 1px solid #d8e7e5;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #07595a;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.back-dashboard-button:hover {
+    background: #eef8f6;
+    border-color: #b9dcd7;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.make-transaction-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.8fr)
+        minmax(390px, 0.8fr);
+
+    gap: 28px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   TRANSACTION FORM CARD
+===================================================== */
+
+.transaction-form-card {
+    background: #ffffff;
+
+    border: 1px solid #dce9e8;
+
+    border-radius: 24px;
+
+    padding: 34px;
+
+    box-shadow:
+        0 8px 30px rgba(
+            0,
+            0,
+            0,
+            0.04
+        );
+}
+
+
+/* =====================================================
+   TRANSACTION ICON
+===================================================== */
+
+.transaction-form-icon {
+    width: 56px;
+
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #e5f7f5;
+
+    color: #07877f;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   FORM TITLE
+===================================================== */
+
+.transaction-form-card h2 {
+    margin: 0;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+
+    color: #073c3d;
+}
+
+.transaction-form-description {
+    margin: 10px 0 27px;
+
+    color: #76908f;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   AVAILABLE BALANCE
+===================================================== */
+
+.available-balance {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    margin-bottom: 27px;
+
+    border-radius: 15px;
+
+    background: #f4faf9;
+
+    border: 1px solid #dcecea;
+}
+
+.available-balance span {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    color: #789291;
+
+    margin-bottom: 6px;
+}
+
+.available-balance strong {
+    display: block;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: #083f40;
+}
+
+.balance-mini-icon {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #dff4f1;
+
+    color: #07877f;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #123f40;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d4e4e2;
+
+    border-radius: 12px;
+
+    background: #fbfdfd;
+
+    color: #163f40;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+    height: 56px;
+
+    padding: 0 17px;
+}
+
+.form-group textarea {
+    min-height: 115px;
+
+    padding: 15px 17px;
+
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0c9189;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            12,
+            145,
+            137,
+            0.08
+        );
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   AMOUNT INPUT
+===================================================== */
+
+.amount-input-wrapper {
+    position: relative;
+}
+
+.amount-input-wrapper > span {
+    position: absolute;
+
+    left: 17px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 17px;
+
+    color: #0b817b;
+
+    font-weight: 600;
+
+    pointer-events: none;
+}
+
+.amount-input-wrapper input {
+    padding-left: 41px;
+}
+
+
+/* =====================================================
+   TRANSACTION MESSAGE
+===================================================== */
+
+.transaction-message {
+    display: flex;
+
+    gap: 13px;
+
+    align-items: flex-start;
+
+    padding: 15px 17px;
+
+    border-radius: 13px;
+
+    margin-bottom: 19px;
+
+    font-size: 14px;
+}
+
+.transaction-message > span {
+    width: 27px;
+
+    height: 27px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: 700;
+}
+
+.transaction-message strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.transaction-message p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+.transaction-message.error {
+    background: #fff1f1;
+
+    border: 1px solid #ffd2d2;
+
+    color: #a53232;
+}
+
+.transaction-message.error > span {
+    background: #ffdede;
+
+    color: #a53232;
+}
+
+.transaction-message.success {
+    background: #effaf6;
+
+    border: 1px solid #d3eee5;
+
+    color: #16765f;
+}
+
+.transaction-message.success > span {
+    background: #d9f4ea;
+
+    color: #16765f;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.make-transaction-button {
+    width: 100%;
+
+    height: 57px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #07877f;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.make-transaction-button:hover {
+    background: #06746d;
+
+    transform: translateY(-1px);
+}
+
+.make-transaction-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   AI FRAUD PROTECTION CARD
+===================================================== */
+
+.ai-protection-card {
+    background: #ffffff;
+
+    border: 1px solid #dce9e8;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 8px 30px rgba(
+            0,
+            0,
+            0,
+            0.04
+        );
+}
+
+
+/* =====================================================
+   AI ICON
+===================================================== */
+
+.ai-card-icon {
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e7f7f5;
+
+    border-radius: 16px;
+
+    font-size: 29px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   AI LABEL
+===================================================== */
+
+.ai-card-label {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #6b8c8b;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   AI TITLE
+===================================================== */
+
+.ai-protection-card h2 {
+    margin: 0 0 11px;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+
+    color: #073c3d;
+}
+
+
+/* =====================================================
+   AI DESCRIPTION
+===================================================== */
+
+.ai-card-description {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #718b8c;
+}
+
+
+/* =====================================================
+   RISK INFORMATION
+===================================================== */
+
+.ai-risk-grid {
+    margin-top: 24px;
+
+    padding-top: 21px;
+
+    border-top: 1px solid #e2eeee;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 21px 17px;
+}
+
+.ai-risk-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.ai-risk-item span {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #718b8c;
+}
+
+.ai-risk-item strong {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #123f40;
+}
+
+
+/* =====================================================
+   RISK COLORS
+===================================================== */
+
+.risk-low {
+    color: #078c70 !important;
+}
+
+.risk-medium {
+    color: #c18316 !important;
+}
+
+.risk-high {
+    color: #d04444 !important;
+}
+
+
+/* =====================================================
+   RISK PROGRESS
+===================================================== */
+
+.ai-progress-section {
+    margin-top: 25px;
+}
+
+.ai-progress-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.ai-progress-header span {
+    font-size: 13px;
+
+    font-weight: 500;
+
+    color: #718b8c;
+}
+
+.ai-progress-header strong {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #123f40;
+}
+
+.ai-progress-bar {
+    width: 100%;
+
+    height: 10px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e5eeee;
+}
+
+.ai-progress-fill {
+    height: 100%;
+
+    min-width: 2px;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.5s ease,
+        background 0.3s ease;
+}
+
+.ai-progress-fill.risk-low {
+    background: #078c7d;
+}
+
+.ai-progress-fill.risk-medium {
+    background: #d19a2d;
+}
+
+.ai-progress-fill.risk-high {
+    background: #dc5959;
+}
+
+
+/* =====================================================
+   AI DECISION
+===================================================== */
+
+.ai-decision {
+    margin-top: 22px;
+
+    padding: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-radius: 14px;
+
+    border: 1px solid #dcecea;
+
+    background: #f6faf9;
+}
+
+.ai-decision.risk-low {
+    background: #effaf6;
+
+    border-color: #d5eee5;
+}
+
+.ai-decision.risk-medium {
+    background: #fff9ec;
+
+    border-color: #f2e2bd;
+}
+
+.ai-decision.risk-high {
+    background: #fff2f2;
+
+    border-color: #f2d2d2;
+}
+
+.ai-decision-icon {
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d9f4eb;
+
+    color: #087e70;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+.ai-decision.risk-medium .ai-decision-icon {
+    background: #f8eac8;
+
+    color: #a87615;
+}
+
+.ai-decision.risk-high .ai-decision-icon {
+    background: #f7dada;
+
+    color: #c13f3f;
+}
+
+.ai-decision strong {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #174745;
+}
+
+.ai-decision p {
+    margin: 4px 0 0;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    color: #6e8584;
+}
+
+
+/* =====================================================
+   AI REASON
+===================================================== */
+
+.ai-reason {
+    margin-top: 18px;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background: #f8fbfb;
+}
+
+.ai-reason strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #164b4b;
+}
+
+.ai-reason p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+
+    color: #71898a;
+}
+
+
+/* =====================================================
+   HOW AI WORKS
+===================================================== */
+
+.ai-analysis-info {
+    margin-top: 20px;
+
+    padding-top: 19px;
+
+    border-top: 1px solid #e2eeee;
+}
+
+.ai-analysis-info > strong {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #164b4b;
+}
+
+.ai-analysis-step {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin-bottom: 13px;
+}
+
+.ai-analysis-step:last-child {
+    margin-bottom: 0;
+}
+
+.ai-analysis-step span {
+    width: 26px;
+
+    height: 26px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #e7f6f4;
+
+    color: #087e77;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.ai-analysis-step p {
+    margin: 2px 0 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #71898a;
+}
+
+
+/* =====================================================
+   AI PROTECTION STATUS
+===================================================== */
+
+.ai-protection-status {
+    margin-top: 20px;
+
+    padding-top: 19px;
+
+    border-top: 1px solid #e2eeee;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.ai-status-dot {
+    width: 11px;
+
+    height: 11px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #10b981;
+
+    box-shadow:
+        0 0 0 5px #e2f8f1;
+}
+
+.ai-protection-status strong {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #16846b;
+}
+
+.ai-protection-status small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: #7a9493;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.make-transaction-loading {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f3f9f8;
+
+    color: #073c3d;
+
+    text-align: center;
+}
+
+.make-transaction-loading h2 {
+    margin: 0 0 9px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+.make-transaction-loading p {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #718b8c;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1150px) {
+
+    .make-transaction-content {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-protection-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .make-transaction-page {
+        padding: 25px 18px;
+    }
+
+    .make-transaction-header {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+
+    .make-transaction-header h1 {
+        font-size: 30px;
+    }
+
+    .transaction-form-card,
+    .ai-protection-card {
+        padding: 24px;
+
+        border-radius: 20px;
+    }
+
+    .transaction-form-card h2,
+    .ai-protection-card h2 {
+        font-size: 24px;
+    }
+
+    .ai-risk-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =====================================================
+   AI FRAUD CONFIRMATION POPUP
+===================================================== */
+
+.fraud-confirmation-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        rgba(
+            3,
+            22,
+            21,
+            0.72
+        );
+
+    backdrop-filter:
+        blur(7px);
+
+}
+
+
+.fraud-confirmation-modal {
+
+    width:
+        min(
+            540px,
+            100%
+        );
+
+    max-height:
+        calc(
+            100vh - 48px
+        );
+
+    overflow-y:
+        auto;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        #dce9e8;
+
+    border-radius:
+        24px;
+
+    padding:
+        34px;
+
+    box-sizing:
+        border-box;
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+
+    animation:
+        fraudModalAppear
+        0.22s
+        ease-out;
+
+}
+
+
+@keyframes fraudModalAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(12px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.fraud-warning-icon {
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        20px;
+
+    border-radius:
+        18px;
+
+    background:
+        #fff3d8;
+
+    color:
+        #b8790a;
+
+    font-size:
+        28px;
+
+    font-weight:
+        800;
+
+}
+
+
+.fraud-confirmation-label {
+
+    margin-bottom:
+        8px;
+
+    color:
+        #b8790a;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2.5px;
+
+}
+
+
+.fraud-confirmation-content h2 {
+
+    margin:
+        0;
+
+    color:
+        #073c3d;
+
+    font-size:
+        28px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+.fraud-confirmation-message {
+
+    margin:
+        14px
+        0
+        8px;
+
+    color:
+        #567170;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.fraud-confirmation-message strong {
+
+    color:
+        #073c3d;
+
+    font-weight:
+        800;
+
+}
+
+
+.fraud-confirmation-question {
+
+    margin:
+        20px
+        0
+        22px;
+
+    color:
+        #6d8583;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.fraud-confirmation-question strong {
+
+    display:
+        inline-block;
+
+    margin-top:
+        5px;
+
+    color:
+        #123f40;
+
+    font-size:
+        17px;
+
+}
+
+
+.fraud-confirmation-risk {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        14px;
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.fraud-confirmation-risk > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        6px;
+
+    padding:
+        15px 16px;
+
+    border-radius:
+        13px;
+
+    background:
+        #f7faf9;
+
+    border:
+        1px solid
+        #e0ebe9;
+
+}
+
+
+.fraud-confirmation-risk span {
+
+    color:
+        #78908f;
+
+    font-size:
+        12px;
+
+    font-weight:
+        500;
+
+}
+
+
+.fraud-confirmation-risk strong {
+
+    color:
+        #c18316;
+
+    font-size:
+        19px;
+
+    font-weight:
+        800;
+
+}
+
+
+.fraud-confirmation-actions {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        12px;
+
+}
+
+
+.fraud-confirmation-actions button {
+
+    min-height:
+        52px;
+
+    border-radius:
+        12px;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform
+        0.2s ease,
+
+        background
+        0.2s ease,
+
+        border-color
+        0.2s ease;
+
+}
+
+
+.fraud-confirmation-actions button:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.fraud-confirmation-actions button:disabled {
+
+    opacity:
+        0.6;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
+}
+
+
+.fraud-block-button {
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        #e5bcbc;
+
+    color:
+        #b33f3f;
+
+}
+
+
+.fraud-block-button:hover {
+
+    background:
+        #fff3f3;
+
+    border-color:
+        #d98b8b;
+
+}
+
+
+.fraud-allow-button {
+
+    border:
+        none;
+
+    background:
+        #07877f;
+
+    color:
+        #ffffff;
+
+}
+
+
+.fraud-allow-button:hover {
+
+    background:
+        #06746d;
+
+}
+
+
+.fraud-confirmation-note {
+
+    margin:
+        18px
+        0
+        0;
+
+    padding-top:
+        17px;
+
+    border-top:
+        1px solid
+        #e5eeee;
+
+    color:
+        #829695;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.6;
+
+    text-align:
+        center;
+
+}
+
+
+.fraud-confirmation-note strong {
+
+    color:
+        #b33f3f;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode
+.fraud-confirmation-modal {
+
+    background:
+        #102827;
+
+    border-color:
+        #28504d;
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
+
+}
+
+
+body.dark-mode
+.fraud-confirmation-content h2 {
+
+    color:
+        #eaf8f6;
+
+}
+
+
+body.dark-mode
+.fraud-confirmation-message {
+
+    color:
+        #8eaaa7;
+
+}
+
+
+body.dark-mode
+.fraud-confirmation-message strong {
+
+    color:
+        #eaf8f6;
+
+}
+
+
+body.dark-mode
+.fraud-confirmation-question {
+
+    color:
+        #829f9c;
+
+}
+
+
+body.dark-mode
+.fraud-confirmation-question strong {
+
+    color:
+        #dff4f1;
+
+}
+
+
+body.dark-mode
+.fraud-confirmation-risk > div {
+
+    background:
+        #0c211f;
+
+    border-color:
+        #28504d;
+
+}
+
+
+body.dark-mode
+.fraud-confirmation-risk span {
+
+    color:
+        #799894;
+
+}
+
+
+body.dark-mode
+.fraud-confirmation-note {
+
+    border-color:
+        #28504d;
+
+    color:
+        #78928f;
+
+}
+
+
+body.dark-mode
+.fraud-block-button {
+
+    background:
+        #102827;
+
+    border-color:
+        #754747;
+
+    color:
+        #e68c8c;
+
+}
+
+
+body.dark-mode
+.fraud-block-button:hover {
+
+    background:
+        #2a1717;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (
+    max-width: 600px
+) {
+
+    .fraud-confirmation-overlay {
+
+        padding:
+            15px;
+
+    }
+
+
+    .fraud-confirmation-modal {
+
+        padding:
+            25px;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .fraud-confirmation-content h2 {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .fraud-confirmation-risk {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .fraud-confirmation-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
